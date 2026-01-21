@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema 8: Medidas | Examen Radioaficionado</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Newsreader:opsz,wght@6..72,400;6..72,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-content">
+            <div class="logo">
+                <span class="callsign">EA</span>
+                <span class="title">Examen Radioaficionado</span>
+            </div>
+            <nav class="main-nav">
+                <a href="../index.html">Inicio</a>
+                <a href="index.html" class="active">Parte I</a>
+                <a href="../parte2/index.html">Parte II</a>
+                <a href="../recursos.html">Recursos</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="content-page">
+        <nav class="breadcrumb">
+            <a href="../index.html">Inicio</a>
+            <span>›</span>
+            <a href="index.html">Parte I</a>
+            <span>›</span>
+            Tema 8
+        </nav>
+
+        <h1>Tema 8: Medidas</h1>
+        <p class="tema-meta">Técnicas y equipos de medida en radiocomunicaciones</p>
+
+        <section class="content-section" id="corriente-tension">
+            <h2>8.1 Medida de corriente y tensión</h2>
+
+            <h3>Corriente continua (DC)</h3>
+            <ul>
+                <li>El amperímetro se conecta en <strong>serie</strong> con el circuito</li>
+                <li>Debe tener resistencia interna muy baja</li>
+                <li>Se usa shunt (resistencia de derivación) para ampliar el rango</li>
+            </ul>
+
+            <h3>Tensión continua (DC)</h3>
+            <ul>
+                <li>El voltímetro se conecta en <strong>paralelo</strong></li>
+                <li>Debe tener resistencia interna muy alta</li>
+                <li>Se usa divisor resistivo para ampliar el rango</li>
+            </ul>
+
+            <h3>Corriente y tensión alterna (AC)</h3>
+            <ul>
+                <li>Los instrumentos pueden medir valor eficaz (RMS), medio o pico</li>
+                <li>Instrumentos de valor verdadero RMS para ondas no sinusoidales</li>
+                <li>La mayoría de multímetros baratos asumen onda sinusoidal</li>
+            </ul>
+
+            <h3>Errores en las medidas</h3>
+            <ul>
+                <li><strong>Carga del circuito:</strong> El instrumento altera el circuito medido</li>
+                <li><strong>Error de lectura:</strong> Paralaje, precisión del instrumento</li>
+                <li><strong>Errores por temperatura:</strong> Los componentes varían con T</li>
+            </ul>
+
+            <h3>Influencia de la frecuencia</h3>
+            <ul>
+                <li>Los instrumentos tienen limitación de frecuencia</li>
+                <li>Capacidades e inductancias parásitas afectan a alta frecuencia</li>
+                <li>Usar equipos especificados para RF</li>
+            </ul>
+
+            <h3>Influencia de la forma de onda</h3>
+            <ul>
+                <li>Instrumentos de valor medio calibrados para sinusoidales dan error con otras ondas</li>
+                <li>Para señales complejas usar True RMS</li>
+            </ul>
+
+            <h3>Resistencia interna del instrumento</h3>
+            <ul>
+                <li>Voltímetro: Alta Z para no cargar (típico: 10MΩ)</li>
+                <li>Amperímetro: Baja Z para no añadir resistencia</li>
+            </ul>
+        </section>
+
+        <section class="content-section" id="resistencia">
+            <h2>8.2 Medida de resistencia</h2>
+
+            <ul>
+                <li>El óhmetro aplica tensión conocida y mide corriente</li>
+                <li><strong>Importante:</strong> Circuito sin alimentación al medir</li>
+                <li>Escalas logarítmicas en analógicos</li>
+                <li>Método de 4 hilos para resistencias bajas (elimina resistencia de cables)</li>
+            </ul>
+        </section>
+
+        <section class="content-section" id="potencia">
+            <h2>8.3 Medida de potencia</h2>
+
+            <h3>Potencia de corriente continua</h3>
+            <div class="formula">
+                P = V × I
+            </div>
+            <p>Se mide tensión e intensidad y se multiplica.</p>
+
+            <h3>Potencia de radiofrecuencia</h3>
+            <ul>
+                <li>Vatímetros de RF con carga ficticia (dummy load)</li>
+                <li>Vatímetros direccionales (en línea)</li>
+                <li>Medida de potencia media y potencia de pico (PEP)</li>
+            </ul>
+
+            <h3>Potencia media vs. PEP</h3>
+            <div class="definition">
+                <dl>
+                    <dt>Potencia media</dt>
+                    <dd>Potencia promediada en el tiempo. Relevante para disipación térmica.</dd>
+                </dl>
+                <dl>
+                    <dt>PEP (Peak Envelope Power)</dt>
+                    <dd>Potencia en el pico máximo de la envolvente. Relevante para SSB y modos con variación de amplitud.</dd>
+                </dl>
+            </div>
+        </section>
+
+        <section class="content-section" id="roe">
+            <h2>8.4 Medida de ondas estacionarias (ROE/SWR)</h2>
+
+            <h3>Principio</h3>
+            <p>El medidor de ROE detecta las ondas directa y reflejada en una línea de transmisión.</p>
+            <div class="formula">
+                ROE = (V<sub>max</sub>) / (V<sub>min</sub>) = (P<sub>directa</sub> + P<sub>reflejada</sub>) / (P<sub>directa</sub> - P<sub>reflejada</sub>)
+            </div>
+
+            <h3>Uso</h3>
+            <ol>
+                <li>Conectar entre transmisor y línea/antena</li>
+                <li>Calibrar con la potencia directa (forward)</li>
+                <li>Leer ROE en la posición reflejada (reflected)</li>
+            </ol>
+
+            <h3>Interpretación</h3>
+            <table>
+                <thead>
+                    <tr><th>ROE</th><th>Potencia reflejada</th><th>Estado</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>1:1</td><td>0%</td><td>Adaptación perfecta</td></tr>
+                    <tr><td>1.5:1</td><td>4%</td><td>Excelente</td></tr>
+                    <tr><td>2:1</td><td>11%</td><td>Bueno</td></tr>
+                    <tr><td>3:1</td><td>25%</td><td>Aceptable</td></tr>
+                    <tr><td>>3:1</td><td>>25%</td><td>Requiere ajuste</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="content-section" id="envolvente">
+            <h2>8.5 Forma de onda de la envolvente</h2>
+
+            <p>La forma de la envolvente de RF muestra la modulación:</p>
+            <ul>
+                <li><strong>CW:</strong> Envolvente rectangular con flancos suaves</li>
+                <li><strong>AM:</strong> Envolvente que sigue la forma del audio</li>
+                <li><strong>SSB:</strong> Envolvente variable según el habla</li>
+                <li><strong>FM:</strong> Envolvente constante (amplitud no varía)</li>
+            </ul>
+            <p>Se observa con osciloscopio para detectar sobremodulación, distorsión, etc.</p>
+        </section>
+
+        <section class="content-section" id="frecuencia">
+            <h2>8.6 Medida de frecuencia</h2>
+
+            <ul>
+                <li><strong>Frecuencímetro digital:</strong> Cuenta ciclos en un tiempo conocido</li>
+                <li><strong>Heterodino:</strong> Comparación con frecuencia conocida</li>
+                <li><strong>Analizador de espectros:</strong> Muestra frecuencia y amplitud</li>
+            </ul>
+
+            <h3>Frecuencia de resonancia</h3>
+            <p>Se determina variando la frecuencia hasta encontrar máximo de corriente (serie) o máximo de impedancia (paralelo). Útil para ajustar antenas y filtros.</p>
+        </section>
+
+        <section class="content-section" id="equipos">
+            <h2>8.7 Equipos de medida</h2>
+
+            <h3>Polímetro (multímetro)</h3>
+            <ul>
+                <li>Mide V, I, R (y a menudo capacidad, frecuencia, etc.)</li>
+                <li><strong>Analógico:</strong> Aguja móvil, bueno para ver variaciones</li>
+                <li><strong>Digital:</strong> Mayor precisión, más funciones</li>
+            </ul>
+
+            <h3>Vatímetro de RF</h3>
+            <ul>
+                <li>Mide potencia en líneas de transmisión</li>
+                <li>Tipos: termopar, bolómetro, diodo</li>
+                <li>Requiere carga adaptada (50Ω) o carga ficticia</li>
+            </ul>
+
+            <h3>Medidor de ROE</h3>
+            <ul>
+                <li>Puente direccional que separa ondas directa y reflejada</li>
+                <li>Algunos combinan vatímetro y medidor de ROE</li>
+            </ul>
+
+            <h3>Frecuencímetro</h3>
+            <ul>
+                <li>Mide frecuencia con alta precisión</li>
+                <li>Base de tiempo de cristal o GPS</li>
+                <li>Resolución típica: 1 Hz o mejor</li>
+            </ul>
+
+            <h3>Osciloscopio</h3>
+            <ul>
+                <li>Muestra forma de onda en función del tiempo</li>
+                <li>Permite medir amplitud, período, forma de señales</li>
+                <li>Diagnóstico de modulación, distorsión</li>
+                <li>Ancho de banda limitado (verificar especificaciones)</li>
+            </ul>
+
+            <h3>Analizador de espectros</h3>
+            <ul>
+                <li>Muestra amplitud en función de la frecuencia</li>
+                <li>Detecta armónicos, espurios, ancho de banda ocupado</li>
+                <li>Esencial para verificar pureza espectral de transmisores</li>
+                <li>Parámetros: span, RBW, nivel de referencia</li>
+            </ul>
+
+            <h3>Analizador de antenas</h3>
+            <ul>
+                <li>Mide impedancia, ROE, resonancia de antenas</li>
+                <li>Genera señal de prueba y analiza reflexiones</li>
+                <li>Muy útil para ajustar antenas y líneas</li>
+            </ul>
+        </section>
+
+        <nav class="tema-nav">
+            <a href="tema7.html">
+                <span class="nav-label">Anterior</span>
+                <span class="nav-title">Tema 7: Propagación</span>
+            </a>
+            <a href="tema9.html" class="next">
+                <span class="nav-label">Siguiente</span>
+                <span class="nav-title">Tema 9: Interferencias</span>
+            </a>
+        </nav>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>Proyecto de código abierto · <a href="https://github.com/t00mas/eaharec" target="_blank">GitHub</a></p>
+            <p class="disclaimer">Contenido basado en el Anexo II de la Orden IET/1311/2013</p>
+        </div>
+    </footer>
+</body>
+</html>
+

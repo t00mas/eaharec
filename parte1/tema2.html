@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema 2: Componentes | Examen Radioaficionado</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Newsreader:opsz,wght@6..72,400;6..72,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-content">
+            <div class="logo">
+                <span class="callsign">EA</span>
+                <span class="title">Examen Radioaficionado</span>
+            </div>
+            <nav class="main-nav">
+                <a href="../index.html">Inicio</a>
+                <a href="index.html" class="active">Parte I</a>
+                <a href="../parte2/index.html">Parte II</a>
+                <a href="../recursos.html">Recursos</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="content-page">
+        <nav class="breadcrumb">
+            <a href="../index.html">Inicio</a>
+            <span>›</span>
+            <a href="index.html">Parte I</a>
+            <span>›</span>
+            Tema 2
+        </nav>
+
+        <h1>Tema 2: Componentes</h1>
+        <p class="tema-meta">Componentes electrónicos pasivos y activos</p>
+
+        <!-- 2.1 Resistencias -->
+        <section class="content-section" id="resistencias">
+            <h2>2.1 Resistencias</h2>
+            
+            <p>La resistencia es la oposición al paso de la corriente eléctrica. Se mide en ohmios (Ω).</p>
+
+            <h3>Tipos de resistencias</h3>
+            <ul>
+                <li><strong>Carbón (composición):</strong> baratas, tolerancia 5-20%, uso general</li>
+                <li><strong>Película de carbón:</strong> mejor estabilidad, tolerancia 1-5%</li>
+                <li><strong>Película metálica:</strong> alta precisión, tolerancia 0.1-1%, bajo ruido</li>
+                <li><strong>Bobinadas:</strong> alta potencia, inductivas, no aptas para RF</li>
+                <li><strong>SMD:</strong> montaje superficial, tamaño reducido</li>
+            </ul>
+
+            <h3>Código de colores</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Color</th>
+                        <th>Dígito</th>
+                        <th>Multiplicador</th>
+                        <th>Tolerancia</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Negro</td><td>0</td><td>×1</td><td>—</td></tr>
+                    <tr><td>Marrón</td><td>1</td><td>×10</td><td>±1%</td></tr>
+                    <tr><td>Rojo</td><td>2</td><td>×100</td><td>±2%</td></tr>
+                    <tr><td>Naranja</td><td>3</td><td>×1k</td><td>—</td></tr>
+                    <tr><td>Amarillo</td><td>4</td><td>×10k</td><td>—</td></tr>
+                    <tr><td>Verde</td><td>5</td><td>×100k</td><td>±0.5%</td></tr>
+                    <tr><td>Azul</td><td>6</td><td>×1M</td><td>±0.25%</td></tr>
+                    <tr><td>Violeta</td><td>7</td><td>×10M</td><td>±0.1%</td></tr>
+                    <tr><td>Gris</td><td>8</td><td>—</td><td>—</td></tr>
+                    <tr><td>Blanco</td><td>9</td><td>—</td><td>—</td></tr>
+                    <tr><td>Oro</td><td>—</td><td>×0.1</td><td>±5%</td></tr>
+                    <tr><td>Plata</td><td>—</td><td>×0.01</td><td>±10%</td></tr>
+                </tbody>
+            </table>
+
+            <div class="formula">
+                <strong>Lectura (4 bandas):</strong> 1ª cifra | 2ª cifra | multiplicador | tolerancia<br>
+                <small>Ejemplo: Marrón-Negro-Rojo-Oro = 10 × 100 = 1000Ω (1kΩ) ±5%</small>
+            </div>
+
+            <h3>Característica corriente/tensión</h3>
+            <p>En resistencias ideales, la relación V/I es lineal (Ley de Ohm). La pendiente de la recta es el valor de la resistencia.</p>
+
+            <h3>Disipación de potencia</h3>
+            <div class="formula">
+                P = I² × R = V² / R
+            </div>
+            <p>Las resistencias tienen una potencia nominal máxima (1/4W, 1/2W, 1W, 2W, 5W...). Superarla causa sobrecalentamiento y destrucción.</p>
+
+            <h3>Coeficientes de temperatura</h3>
+            <div class="definition">
+                <dl>
+                    <dt>PTC (Positive Temperature Coefficient)</dt>
+                    <dd>La resistencia aumenta con la temperatura. Ejemplo: metales, termistores PTC.</dd>
+                </dl>
+                <dl>
+                    <dt>NTC (Negative Temperature Coefficient)</dt>
+                    <dd>La resistencia disminuye con la temperatura. Ejemplo: termistores NTC, semiconductores.</dd>
+                </dl>
+            </div>
+        </section>
+
+        <!-- 2.2 Condensadores -->
+        <section class="content-section" id="condensadores">
+            <h2>2.2 Condensadores</h2>
+            
+            <p>El condensador almacena energía en un campo eléctrico entre dos placas conductoras separadas por un dieléctrico.</p>
+
+            <h3>Capacidad</h3>
+            <p>Se mide en <strong>faradios (F)</strong>. El faradio es muy grande, se usan submúltiplos:</p>
+            <ul>
+                <li>mF (milifaradio) = 10⁻³ F</li>
+                <li>µF (microfaradio) = 10⁻⁶ F</li>
+                <li>nF (nanofaradio) = 10⁻⁹ F</li>
+                <li>pF (picofaradio) = 10⁻¹² F</li>
+            </ul>
+
+            <h3>Factores que afectan la capacidad</h3>
+            <div class="formula">
+                C = ε × (A / d)<br>
+                <small>ε = permitividad del dieléctrico, A = área de placas, d = distancia entre placas</small>
+            </div>
+            <ul>
+                <li>Mayor área de placas → mayor capacidad</li>
+                <li>Menor distancia entre placas → mayor capacidad</li>
+                <li>Mayor permitividad del dieléctrico → mayor capacidad</li>
+            </ul>
+
+            <h3>Reactancia capacitiva</h3>
+            <div class="formula">
+                X<sub>C</sub> = 1 / (2πfC)<br>
+                <small>La reactancia disminuye al aumentar la frecuencia</small>
+            </div>
+
+            <h3>Relación de fase</h3>
+            <p>En un condensador, la <strong>corriente adelanta 90°</strong> a la tensión.</p>
+
+            <h3>Tipos de condensadores</h3>
+            <table>
+                <thead>
+                    <tr><th>Tipo</th><th>Características</th><th>Uso</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Aire</td><td>Variable, baja capacidad, sin pérdidas</td><td>Sintonía RF</td></tr>
+                    <tr><td>Mica</td><td>Estables, baja tolerancia, RF</td><td>Circuitos resonantes</td></tr>
+                    <tr><td>Plástico (poliéster, polipropileno)</td><td>Estables, bajo coste</td><td>Filtros, acoplamiento</td></tr>
+                    <tr><td>Cerámicos</td><td>Compactos, amplio rango de valores</td><td>Desacoplo, RF</td></tr>
+                    <tr><td>Electrolíticos</td><td>Alta capacidad, polarizados</td><td>Filtrado fuentes DC</td></tr>
+                </tbody>
+            </table>
+
+            <h3>Coeficiente de temperatura</h3>
+            <p>Indica cómo varía la capacidad con la temperatura. Importante en circuitos de precisión y osciladores.</p>
+
+            <h3>Corriente de fuga</h3>
+            <p>Pequeña corriente que atraviesa el dieléctrico. Mayor en electrolíticos. Importante en circuitos de temporización.</p>
+        </section>
+
+        <!-- 2.3 Bobinas -->
+        <section class="content-section" id="bobinas">
+            <h2>2.3 Bobinas (inductores)</h2>
+            
+            <p>La bobina almacena energía en un campo magnético. Se opone a cambios en la corriente.</p>
+
+            <h3>Autoinducción</h3>
+            <p>Se mide en <strong>henrios (H)</strong>. Submúltiplos: mH (milihenrio), µH (microhenrio).</p>
+
+            <h3>Factores que afectan la inductancia</h3>
+            <ul>
+                <li>Mayor número de espiras → mayor inductancia (proporcional a N²)</li>
+                <li>Mayor diámetro → mayor inductancia</li>
+                <li>Menor longitud → mayor inductancia</li>
+                <li>Material del núcleo: aire < ferrita < hierro (mayor permeabilidad = mayor L)</li>
+            </ul>
+
+            <h3>Reactancia inductiva</h3>
+            <div class="formula">
+                X<sub>L</sub> = 2πfL<br>
+                <small>La reactancia aumenta con la frecuencia</small>
+            </div>
+
+            <h3>Relación de fase</h3>
+            <p>En una bobina, la <strong>tensión adelanta 90°</strong> a la corriente (o la corriente atrasa 90°).</p>
+
+            <h3>Factor Q (calidad)</h3>
+            <div class="formula">
+                Q = X<sub>L</sub> / R = 2πfL / R
+            </div>
+            <p>Un Q alto indica pocas pérdidas. Importante en circuitos resonantes.</p>
+
+            <h3>Efecto pelicular (skin effect)</h3>
+            <p>A altas frecuencias, la corriente circula por la superficie del conductor, aumentando la resistencia efectiva. Se mitiga usando hilo de Litz o conductores huecos.</p>
+
+            <h3>Pérdidas</h3>
+            <ul>
+                <li>Pérdidas en el conductor (resistencia del hilo)</li>
+                <li>Pérdidas en el núcleo (histéresis, corrientes parásitas)</li>
+                <li>Efecto pelicular a altas frecuencias</li>
+            </ul>
+        </section>
+
+        <!-- 2.4 Transformadores -->
+        <section class="content-section" id="transformadores">
+            <h2>2.4 Transformadores</h2>
+            
+            <p>Dispositivo que transfiere energía entre dos bobinas acopladas magnéticamente. Permite cambiar niveles de tensión y adaptar impedancias.</p>
+
+            <h3>Transformador ideal</h3>
+            <div class="formula">
+                P<sub>primario</sub> = P<sub>secundario</sub> (sin pérdidas)<br>
+                V<sub>1</sub> × I<sub>1</sub> = V<sub>2</sub> × I<sub>2</sub>
+            </div>
+
+            <h3>Relación de transformación (n)</h3>
+            <div class="formula">
+                n = N<sub>1</sub> / N<sub>2</sub> = V<sub>1</sub> / V<sub>2</sub> = I<sub>2</sub> / I<sub>1</sub>
+            </div>
+            <ul>
+                <li>n > 1: Transformador reductor (baja la tensión)</li>
+                <li>n < 1: Transformador elevador (sube la tensión)</li>
+            </ul>
+
+            <h3>Transformación de impedancias</h3>
+            <div class="formula">
+                Z<sub>1</sub> / Z<sub>2</sub> = n²<br>
+                <small>La impedancia se transforma con el cuadrado de la relación de espiras</small>
+            </div>
+            <p>Ejemplo: Un transformador 4:1 en espiras transforma la impedancia en relación 16:1.</p>
+
+            <h3>Aplicaciones en radioafición</h3>
+            <ul>
+                <li>Fuentes de alimentación</li>
+                <li>Adaptación de impedancias (antena-transceptor)</li>
+                <li>Baluns (transformadores de equilibrado)</li>
+                <li>Aislamiento galvánico</li>
+            </ul>
+        </section>
+
+        <!-- 2.5 Diodos -->
+        <section class="content-section" id="diodos">
+            <h2>2.5 Diodos</h2>
+            
+            <p>Semiconductor que permite el paso de corriente en un solo sentido (ánodo → cátodo).</p>
+
+            <h3>Tipos y aplicaciones</h3>
+            <table>
+                <thead>
+                    <tr><th>Tipo</th><th>Función</th><th>Aplicación</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Rectificador</td><td>Conversión AC→DC</td><td>Fuentes de alimentación</td></tr>
+                    <tr><td>Zener</td><td>Regulación de tensión</td><td>Estabilizadores, referencias</td></tr>
+                    <tr><td>LED</td><td>Emisión de luz</td><td>Indicadores, iluminación</td></tr>
+                    <tr><td>Varicap (varactor)</td><td>Capacidad variable con tensión</td><td>Sintonía electrónica, VCO</td></tr>
+                    <tr><td>Schottky</td><td>Conmutación rápida, baja caída</td><td>Mezcladores RF, detectores</td></tr>
+                    <tr><td>PIN</td><td>Resistencia variable con corriente</td><td>Atenuadores RF, conmutadores</td></tr>
+                </tbody>
+            </table>
+
+            <h3>Tensión inversa máxima (PIV)</h3>
+            <p>Máxima tensión en polarización inversa que soporta sin romperse. Superarla destruye el diodo.</p>
+
+            <h3>Corriente de fuga</h3>
+            <p>Pequeña corriente que circula en polarización inversa. Aumenta con la temperatura.</p>
+
+            <h3>Caída de tensión directa</h3>
+            <ul>
+                <li>Silicio: ~0.6-0.7V</li>
+                <li>Germanio: ~0.2-0.3V</li>
+                <li>Schottky: ~0.2-0.4V</li>
+                <li>LED: 1.5-3.5V (según color)</li>
+            </ul>
+        </section>
+
+        <!-- 2.6 Transistores -->
+        <section class="content-section" id="transistores">
+            <h2>2.6 Transistores</h2>
+            
+            <h3>Transistores bipolares (BJT)</h3>
+            <p>Tres terminales: Base (B), Colector (C), Emisor (E). Tipos NPN y PNP.</p>
+            
+            <div class="definition">
+                <dl>
+                    <dt>Factor de amplificación (β o h<sub>FE</sub>)</dt>
+                    <dd>β = I<sub>C</sub> / I<sub>B</sub><br>
+                    Relación entre corriente de colector y corriente de base. Típicamente 50-300.</dd>
+                </dl>
+            </div>
+
+            <h3>Transistores de efecto campo (FET)</h3>
+            <p>Tres terminales: Puerta (G), Drenador (D), Fuente (S). Controlados por tensión.</p>
+            <ul>
+                <li><strong>JFET:</strong> Unión PN, normalmente ON</li>
+                <li><strong>MOSFET:</strong> Puerta aislada, alta impedancia de entrada</li>
+            </ul>
+
+            <h3>Configuraciones de transistores</h3>
+            <table>
+                <thead>
+                    <tr><th>Configuración BJT</th><th>Configuración FET</th><th>Características</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Emisor común</td>
+                        <td>Fuente común</td>
+                        <td>Alta ganancia de tensión y corriente. Inversión de fase. Uso general.</td>
+                    </tr>
+                    <tr>
+                        <td>Base común</td>
+                        <td>Puerta común</td>
+                        <td>Baja impedancia entrada, alta impedancia salida. Estable en RF.</td>
+                    </tr>
+                    <tr>
+                        <td>Colector común (seguidor de emisor)</td>
+                        <td>Drenador común (seguidor de fuente)</td>
+                        <td>Ganancia ≈1, alta impedancia entrada, baja impedancia salida. Buffer.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Polarización</h3>
+            <p>Establecer el punto de trabajo (punto Q) mediante resistencias de polarización para que el transistor opere en la zona activa.</p>
+        </section>
+
+        <!-- 2.7 Otros componentes -->
+        <section class="content-section" id="otros">
+            <h2>2.7 Otros componentes</h2>
+            
+            <h3>Válvulas termoiónicas</h3>
+            <p>Dispositivos de vacío que controlan el flujo de electrones. Aún usadas en:</p>
+            <ul>
+                <li>Amplificadores de potencia RF de alta potencia</li>
+                <li>Equipos de audio de alta fidelidad</li>
+            </ul>
+            
+            <div class="definition">
+                <dl>
+                    <dt>Tipos principales</dt>
+                    <dd>
+                        <strong>Triodo:</strong> Cátodo, rejilla, ánodo. Amplificación.<br>
+                        <strong>Tetrodo:</strong> + rejilla pantalla. Mejor rendimiento RF.<br>
+                        <strong>Pentodo:</strong> + rejilla supresora. Menor capacidad interelectródica.
+                    </dd>
+                </dl>
+            </div>
+
+            <h3>Circuitos integrados</h3>
+            <p>Múltiples componentes (transistores, resistencias, condensadores) en un solo chip.</p>
+            <ul>
+                <li><strong>Analógicos:</strong> Amplificadores operacionales, reguladores, mezcladores</li>
+                <li><strong>Digitales:</strong> Puertas lógicas, contadores, microprocesadores</li>
+                <li><strong>Mixtos:</strong> Conversores A/D y D/A, PLLs</li>
+            </ul>
+
+            <h3>Circuitos digitales - Generalidades</h3>
+            <p>Trabajan con niveles discretos (0 y 1). Familias lógicas:</p>
+            <ul>
+                <li><strong>TTL:</strong> 5V, rápidos, consumo medio</li>
+                <li><strong>CMOS:</strong> Amplio rango de tensiones, bajo consumo, sensibles a estática</li>
+            </ul>
+            
+            <div class="definition">
+                <dl>
+                    <dt>Puertas básicas</dt>
+                    <dd>AND, OR, NOT, NAND, NOR, XOR</dd>
+                </dl>
+            </div>
+        </section>
+
+        <nav class="tema-nav">
+            <a href="tema1.html">
+                <span class="nav-label">Anterior</span>
+                <span class="nav-title">Tema 1: Teoría electricidad</span>
+            </a>
+            <a href="tema3.html" class="next">
+                <span class="nav-label">Siguiente</span>
+                <span class="nav-title">Tema 3: Circuitos</span>
+            </a>
+        </nav>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>Proyecto de código abierto · <a href="https://github.com/t00mas/eaharec" target="_blank">GitHub</a></p>
+            <p class="disclaimer">Contenido basado en el Anexo II de la Orden IET/1311/2013</p>
+        </div>
+    </footer>
+</body>
+</html>
+

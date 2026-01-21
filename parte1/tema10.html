@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema 10: Seguridad | Examen Radioaficionado</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Newsreader:opsz,wght@6..72,400;6..72,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-content">
+            <div class="logo">
+                <span class="callsign">EA</span>
+                <span class="title">Examen Radioaficionado</span>
+            </div>
+            <nav class="main-nav">
+                <a href="../index.html">Inicio</a>
+                <a href="index.html" class="active">Parte I</a>
+                <a href="../parte2/index.html">Parte II</a>
+                <a href="../recursos.html">Recursos</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="content-page">
+        <nav class="breadcrumb">
+            <a href="../index.html">Inicio</a>
+            <span>›</span>
+            <a href="index.html">Parte I</a>
+            <span>›</span>
+            Tema 10
+        </nav>
+
+        <h1>Tema 10: Seguridad</h1>
+        <p class="tema-meta">Precauciones de seguridad eléctrica y RF en estaciones de radioaficionado</p>
+
+        <section class="content-section" id="electrica">
+            <h2>10.1 Seguridad eléctrica</h2>
+
+            <h3>Peligros de la corriente eléctrica</h3>
+            <p>La corriente eléctrica puede causar:</p>
+            <ul>
+                <li>Fibrilación cardíaca (potencialmente mortal a partir de ~30 mA)</li>
+                <li>Quemaduras internas y externas</li>
+                <li>Tetanización muscular (incapacidad de soltar el conductor)</li>
+                <li>Parada respiratoria</li>
+            </ul>
+
+            <h3>Factores de riesgo</h3>
+            <ul>
+                <li>Intensidad de corriente (más peligrosa que tensión alta)</li>
+                <li>Duración del contacto</li>
+                <li>Trayectoria de la corriente por el cuerpo</li>
+                <li>Frecuencia (50-60 Hz es especialmente peligrosa)</li>
+                <li>Condiciones de humedad</li>
+            </ul>
+
+            <h3>Precauciones básicas</h3>
+            <ul>
+                <li>Desconectar la alimentación antes de trabajar en equipos</li>
+                <li>Descargar condensadores de alta tensión (pueden retener carga)</li>
+                <li>Trabajar con una sola mano cuando sea posible</li>
+                <li>Usar calzado aislante</li>
+                <li>No trabajar en equipos energizados si no es imprescindible</li>
+                <li>Conocer la ubicación del interruptor general</li>
+            </ul>
+        </section>
+
+        <section class="content-section" id="instalacion">
+            <h2>10.2 Instalación eléctrica</h2>
+
+            <h3>Protecciones generales</h3>
+            <ul>
+                <li><strong>Interruptor general:</strong> Permite cortar toda la alimentación</li>
+                <li><strong>Magnetotérmicos:</strong> Protegen contra sobrecargas y cortocircuitos</li>
+                <li><strong>Diferencial (ID):</strong> Detecta fugas de corriente a tierra. Típico: 30 mA</li>
+            </ul>
+
+            <h3>Protección de los equipos</h3>
+            <ul>
+                <li>Fusibles adecuados a la potencia</li>
+                <li>Varistores o supresores de picos</li>
+                <li>Fuentes de alimentación con protecciones integradas</li>
+            </ul>
+
+            <h3>Protección contra contactos de personas</h3>
+            <ul>
+                <li>Carcasas conectadas a tierra</li>
+                <li>Aislamiento de partes activas</li>
+                <li>Barreras y envolventes</li>
+                <li>Señalización de peligro</li>
+            </ul>
+
+            <h3>Cableado</h3>
+            <ul>
+                <li>Sección adecuada para la corriente</li>
+                <li>Cables en buen estado, sin empalmes descubiertos</li>
+                <li>Evitar cables sueltos o pisados</li>
+                <li>Usar regletas y conexiones seguras</li>
+            </ul>
+        </section>
+
+        <section class="content-section" id="tierra">
+            <h2>10.3 Puesta a tierra</h2>
+
+            <h3>Funciones de la toma de tierra</h3>
+            <ul>
+                <li><strong>Seguridad:</strong> Deriva corrientes de fuga, activa el diferencial</li>
+                <li><strong>RF:</strong> Referencia de potencial, plano de tierra para antenas</li>
+                <li><strong>Protección atmosférica:</strong> Disipa descargas de rayos</li>
+            </ul>
+
+            <h3>Requisitos</h3>
+            <ul>
+                <li>Resistencia de tierra baja (idealmente <10Ω)</li>
+                <li>Conductor de sección suficiente (mínimo 6 mm² Cu para seguridad)</li>
+                <li>Conexiones sólidas y protegidas contra corrosión</li>
+                <li>Electrodos: picas, placas enterradas o mallas</li>
+            </ul>
+
+            <h3>Tierra de RF</h3>
+            <ul>
+                <li>Conexión corta y directa (evitar inductancia)</li>
+                <li>Trenza de cobre o conductor ancho</li>
+                <li>Para antenas: radiales o plano de tierra adecuado</li>
+            </ul>
+        </section>
+
+        <section class="content-section" id="antenas">
+            <h2>10.4 Antenas y líneas de alimentación</h2>
+
+            <h3>Seguridad mecánica</h3>
+            <ul>
+                <li>Instalación sólida que soporte viento</li>
+                <li>Alejamiento de líneas eléctricas (mínimo 1.5× altura del mástil)</li>
+                <li>Protección contra caídas durante instalación</li>
+                <li>Tensores y riostras adecuados</li>
+            </ul>
+
+            <h3>Riesgos de RF</h3>
+            <ul>
+                <li>Quemaduras por contacto con antenas energizadas</li>
+                <li>Exposición a campos electromagnéticos intensos</li>
+                <li>Mantener distancia de seguridad durante transmisión</li>
+            </ul>
+
+            <h3>Líneas de alimentación</h3>
+            <ul>
+                <li>Proteger la entrada al edificio</li>
+                <li>Usar pasamuros aislados</li>
+                <li>Instalar descargadores de gas en la entrada</li>
+            </ul>
+        </section>
+
+        <section class="content-section" id="rayos">
+            <h2>10.5 Protección contra descargas atmosféricas</h2>
+
+            <h3>Peligros de los rayos</h3>
+            <ul>
+                <li>Impacto directo (potencialmente mortal)</li>
+                <li>Inducción electromagnética en cables</li>
+                <li>Sobretensiones que destruyen equipos</li>
+                <li>Incendios</li>
+            </ul>
+
+            <h3>Medidas de protección</h3>
+
+            <h4>Pararrayos</h4>
+            <ul>
+                <li>Punta captadora por encima de las antenas</li>
+                <li>Conductor de bajada de sección gruesa (≥50 mm² Cu)</li>
+                <li>Conexión directa a tierra dedicada</li>
+            </ul>
+
+            <h4>Descargadores de antena</h4>
+            <ul>
+                <li>Descargadores de gas en la entrada del cable coaxial</li>
+                <li>Derivan sobretensiones a tierra</li>
+                <li>Deben estar bien conectados a tierra</li>
+            </ul>
+
+            <h4>Protecciones adicionales</h4>
+            <ul>
+                <li>Varistores y supresores en líneas de alimentación</li>
+                <li>Desconectar equipos durante tormentas si es posible</li>
+                <li>Desconectar la antena del equipo</li>
+            </ul>
+
+            <h3>Toma de tierra específica</h3>
+            <ul>
+                <li>Baja impedancia a alta frecuencia</li>
+                <li>Conexiones robustas y cortas</li>
+                <li>Unificación de tierras (seguridad, RF y pararrayos al mismo sistema)</li>
+            </ul>
+        </section>
+
+        <section class="content-section" id="rf">
+            <h2>10.6 Seguridad RF</h2>
+
+            <h3>Efectos de la exposición a RF</h3>
+            <ul>
+                <li>Efecto térmico (calentamiento de tejidos)</li>
+                <li>Mayor riesgo en ojos y tejidos poco vascularizados</li>
+                <li>Límites establecidos por normativa (ICNIRP)</li>
+            </ul>
+
+            <h3>Precauciones</h3>
+            <ul>
+                <li>No tocar antenas durante transmisión</li>
+                <li>Mantener distancia de antenas de alta potencia</li>
+                <li>Especial cuidado con antenas direccionales</li>
+                <li>Reducir potencia si hay personas cerca</li>
+            </ul>
+        </section>
+
+        <section class="content-section" id="resumen">
+            <h2>10.7 Resumen de buenas prácticas</h2>
+
+            <ul>
+                <li>Instalar protecciones eléctricas adecuadas (diferencial, magnetotérmicos)</li>
+                <li>Mantener buena toma de tierra</li>
+                <li>No trabajar en equipos energizados</li>
+                <li>Proteger la instalación contra rayos</li>
+                <li>Mantener distancia de antenas durante transmisión</li>
+                <li>Usar potencia mínima necesaria</li>
+                <li>Verificar periódicamente el estado de la instalación</li>
+                <li>Conocer procedimientos de emergencia (RCP, corte de corriente)</li>
+            </ul>
+        </section>
+
+        <nav class="tema-nav">
+            <a href="tema9.html">
+                <span class="nav-label">Anterior</span>
+                <span class="nav-title">Tema 9: Interferencias</span>
+            </a>
+            <a href="index.html" class="next">
+                <span class="nav-label">Índice</span>
+                <span class="nav-title">Parte I</span>
+            </a>
+        </nav>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>Proyecto de código abierto · <a href="https://github.com/t00mas/eaharec" target="_blank">GitHub</a></p>
+            <p class="disclaimer">Contenido basado en el Anexo II de la Orden IET/1311/2013</p>
+        </div>
+    </footer>
+</body>
+</html>
+

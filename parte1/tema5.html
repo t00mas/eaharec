@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema 5: Transmisores | Examen Radioaficionado</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Newsreader:opsz,wght@6..72,400;6..72,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-content">
+            <div class="logo">
+                <span class="callsign">EA</span>
+                <span class="title">Examen Radioaficionado</span>
+            </div>
+            <nav class="main-nav">
+                <a href="../index.html">Inicio</a>
+                <a href="index.html" class="active">Parte I</a>
+                <a href="../parte2/index.html">Parte II</a>
+                <a href="../recursos.html">Recursos</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="content-page">
+        <nav class="breadcrumb">
+            <a href="../index.html">Inicio</a>
+            <span>›</span>
+            <a href="index.html">Parte I</a>
+            <span>›</span>
+            Tema 5
+        </nav>
+
+        <h1>Tema 5: Transmisores</h1>
+        <p class="tema-meta">Tipos, diagramas de bloques, etapas y características</p>
+
+        <!-- 5.1 Tipos -->
+        <section class="content-section" id="tipos">
+            <h2>5.1 Tipos de transmisores</h2>
+
+            <h3>Sin conversión de frecuencia</h3>
+            <p>El oscilador genera directamente la frecuencia de salida. Simple, pero limitado a frecuencias bajas y difícil de cambiar de banda.</p>
+
+            <h3>Con conversión de frecuencia</h3>
+            <p>Genera la señal en una frecuencia intermedia y luego la convierte a la frecuencia final mediante mezcla con un oscilador local. Permite:</p>
+            <ul>
+                <li>Mayor flexibilidad de frecuencia</li>
+                <li>Mejor filtrado de emisiones no deseadas</li>
+                <li>Uso de filtros de banda lateral a frecuencia fija</li>
+            </ul>
+        </section>
+
+        <!-- 5.2 Diagramas -->
+        <section class="content-section" id="diagramas">
+            <h2>5.2 Diagramas de bloques</h2>
+
+            <h3>Transmisor CW (A1A)</h3>
+            <div class="formula">
+                Oscilador → Buffer → Excitador → Amplificador de potencia → Filtro de salida → Antena<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↑<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Manipulador
+            </div>
+            <p>La señal se enciende/apaga con el manipulador (keying).</p>
+
+            <h3>Transmisor SSB (J3E)</h3>
+            <div class="formula">
+                Micrófono → Amplificador AF → Modulador balanceado ← Oscilador de portadora<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↓<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Filtro de banda lateral<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↓<br>
+                Mezclador ← VFO/Sintetizador → Amplificadores → Filtro → Antena
+            </div>
+
+            <h3>Transmisor FM (F3E)</h3>
+            <div class="formula">
+                Micrófono → Amplificador/Limitador AF → Modulador de frecuencia<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↓<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Oscilador VCO modulado<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↓<br>
+                (Multiplicadores) → Amplificador de potencia → Filtro → Antena
+            </div>
+        </section>
+
+        <!-- 5.3 Etapas -->
+        <section class="content-section" id="etapas">
+            <h2>5.3 Etapas del transmisor</h2>
+
+            <h3>Oscilador</h3>
+            <ul>
+                <li>Genera la frecuencia base o portadora</li>
+                <li>Tipos: VFO, cristal, sintetizador PLL/DDS</li>
+                <li>Requisito fundamental: estabilidad</li>
+            </ul>
+
+            <h3>Mezclador</h3>
+            <ul>
+                <li>Combina señal modulada en FI con oscilador local</li>
+                <li>Genera la frecuencia de transmisión final</li>
+                <li>Seguido de filtro para seleccionar producto deseado</li>
+            </ul>
+
+            <h3>Buffer/Preamplificador</h3>
+            <ul>
+                <li>Aísla el oscilador de las etapas siguientes</li>
+                <li>Evita variaciones de frecuencia por cambios de carga</li>
+                <li>Proporciona ganancia inicial</li>
+            </ul>
+
+            <h3>Excitador (driver)</h3>
+            <ul>
+                <li>Amplifica la señal hasta el nivel necesario para excitar el PA</li>
+                <li>Puede incluir varias etapas</li>
+            </ul>
+
+            <h3>Multiplicador de frecuencia</h3>
+            <ul>
+                <li>Multiplica la frecuencia por 2, 3, etc.</li>
+                <li>Usado en transmisores FM y para alcanzar frecuencias altas</li>
+                <li>Amplificador en clase C sintonizado al armónico deseado</li>
+            </ul>
+
+            <h3>Amplificador de potencia (PA)</h3>
+            <ul>
+                <li>Etapa final que genera la potencia de salida</li>
+                <li>Clase C para CW/FM (sintonizado), clase AB para SSB (lineal)</li>
+                <li>Transistores bipolares, MOSFET o válvulas</li>
+                <li>Requiere disipación de calor adecuada</li>
+            </ul>
+
+            <h3>Filtro de salida</h3>
+            <ul>
+                <li>Filtro paso bajo para eliminar armónicos</li>
+                <li>Típicamente filtro en π (pi)</li>
+                <li>Diferente para cada banda</li>
+            </ul>
+
+            <h3>Moduladores</h3>
+
+            <h4>Modulador de frecuencia</h4>
+            <ul>
+                <li>Varía la frecuencia del oscilador según el audio</li>
+                <li>Métodos: varicap en oscilador, modulación directa de VCO</li>
+            </ul>
+
+            <h4>Modulador de fase</h4>
+            <ul>
+                <li>Varía la fase de la señal según el audio</li>
+                <li>Indirectamente produce FM (PM con preénfasis)</li>
+            </ul>
+
+            <h4>Modulador de banda lateral única</h4>
+            <ul>
+                <li><strong>Método del filtro:</strong> Modulador balanceado + filtro de cristal</li>
+                <li><strong>Método de desfase:</strong> Red de desfase de 90° + suma/resta</li>
+            </ul>
+
+            <h3>Filtros de cristal</h3>
+            <ul>
+                <li>Alta selectividad para separar bandas laterales</li>
+                <li>Frecuencias típicas: 455 kHz, 9 MHz, 10.7 MHz</li>
+                <li>Anchos de banda típicos: 2.1-2.7 kHz para SSB</li>
+            </ul>
+        </section>
+
+        <!-- 5.4 Características -->
+        <section class="content-section" id="caracteristicas">
+            <h2>5.4 Características de los transmisores</h2>
+
+            <h3>Estabilidad de frecuencia</h3>
+            <p>Variación máxima de frecuencia en el tiempo. Especificada en Hz o ppm. Afectada por temperatura, tensión y envejecimiento.</p>
+
+            <h3>Ancho de banda de radiofrecuencia</h3>
+            <p>Rango de frecuencias ocupado por la emisión. Depende del modo:</p>
+            <table>
+                <thead>
+                    <tr><th>Modo</th><th>Ancho de banda típico</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>CW</td><td>100-500 Hz</td></tr>
+                    <tr><td>SSB</td><td>2.4-3 kHz</td></tr>
+                    <tr><td>AM</td><td>6-9 kHz</td></tr>
+                    <tr><td>FM (voz)</td><td>10-16 kHz</td></tr>
+                </tbody>
+            </table>
+
+            <h3>Bandas laterales</h3>
+            <ul>
+                <li><strong>USB (Upper Side Band):</strong> Banda lateral superior. Usada en HF >10 MHz</li>
+                <li><strong>LSB (Lower Side Band):</strong> Banda lateral inferior. Usada en HF <10 MHz</li>
+            </ul>
+
+            <h3>Margen de audiofrecuencia</h3>
+            <p>Rango de frecuencias de audio que el transmisor procesa. Típico: 300-3000 Hz para voz.</p>
+
+            <h3>Efectos no lineales</h3>
+
+            <h4>Armónicos</h4>
+            <p>Múltiplos de la frecuencia fundamental generados por no linealidad (2f, 3f, 4f...). Deben ser filtrados.</p>
+
+            <h4>Distorsión por intermodulación (IMD)</h4>
+            <p>Productos de mezcla de componentes de la propia señal. Causa "splatter" en SSB. Se especifica en dB bajo la señal.</p>
+
+            <h3>Impedancia de salida</h3>
+            <p>Típicamente 50Ω. Debe coincidir con la impedancia de la línea de transmisión/antena.</p>
+
+            <h3>Potencia de salida</h3>
+            <ul>
+                <li>Potencia entregada a una carga adaptada</li>
+                <li>Se mide en vatios (W)</li>
+                <li>Límites legales según la autorización</li>
+            </ul>
+
+            <h3>Rendimiento</h3>
+            <div class="formula">
+                η = P<sub>salida RF</sub> / P<sub>entrada DC</sub> × 100%
+            </div>
+            <p>Típico: clase A ~25%, clase AB ~50%, clase C ~70-80%</p>
+
+            <h3>Desviación de frecuencia (FM)</h3>
+            <p>Variación máxima de frecuencia respecto a la portadora. Típico: ±5 kHz para FM banda estrecha.</p>
+
+            <h3>Índice de modulación</h3>
+            <div class="formula">
+                FM: β = Δf / f<sub>moduladora</sub><br>
+                AM: m = (V<sub>max</sub> - V<sub>min</sub>) / (V<sub>max</sub> + V<sub>min</sub>)
+            </div>
+
+            <h3>Emisiones no deseadas</h3>
+            <div class="definition">
+                <dl>
+                    <dt>Emisiones no esenciales (spurious)</dt>
+                    <dd>Emisiones en frecuencias distintas a las necesarias: armónicos, productos de mezcla parásitos, etc.</dd>
+                </dl>
+                <dl>
+                    <dt>Emisiones fuera de banda</dt>
+                    <dd>Emisiones inmediatamente adyacentes al canal, causadas por modulación.</dd>
+                </dl>
+            </div>
+
+            <h3>Radiación por estructura</h3>
+            <p>Emisión RF directa desde la carcasa o cables del transmisor, no a través de la antena. Debe minimizarse con buen apantallamiento y filtrado.</p>
+        </section>
+
+        <!-- 5.5 Transceptores y repetidores -->
+        <section class="content-section" id="transceptores">
+            <h2>5.5 Transceptores y repetidores</h2>
+
+            <h3>Transceptores</h3>
+            <p>Equipo que integra transmisor y receptor. Comparten:</p>
+            <ul>
+                <li>Oscilador local / sintetizador</li>
+                <li>Filtros (en algunos diseños)</li>
+                <li>Display y controles</li>
+                <li>Fuente de alimentación</li>
+            </ul>
+
+            <h3>Repetidores VHF/UHF</h3>
+            <p>Estaciones que reciben en una frecuencia y retransmiten simultáneamente en otra.</p>
+
+            <div class="definition">
+                <dl>
+                    <dt>Desplazamiento (offset/shift)</dt>
+                    <dd>Diferencia entre frecuencia de entrada y salida. Típico: ±600 kHz en 2m, ±1.6/7.6 MHz en 70cm.</dd>
+                </dl>
+                <dl>
+                    <dt>Tono de acceso (CTCSS)</dt>
+                    <dd>Subtono que activa el repetidor. Evita activaciones falsas.</dd>
+                </dl>
+            </div>
+
+            <h3>Ubicación de repetidores</h3>
+            <ul>
+                <li>Lugares elevados para máxima cobertura</li>
+                <li>Requieren aislamiento entre antenas TX/RX</li>
+                <li>Duplexor o cavidades para separar TX/RX</li>
+                <li>Consideraciones de interferencia y coordinación</li>
+            </ul>
+        </section>
+
+        <nav class="tema-nav">
+            <a href="tema4.html">
+                <span class="nav-label">Anterior</span>
+                <span class="nav-title">Tema 4: Receptores</span>
+            </a>
+            <a href="tema6.html" class="next">
+                <span class="nav-label">Siguiente</span>
+                <span class="nav-title">Tema 6: Antenas</span>
+            </a>
+        </nav>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>Proyecto de código abierto · <a href="https://github.com/t00mas/eaharec" target="_blank">GitHub</a></p>
+            <p class="disclaimer">Contenido basado en el Anexo II de la Orden IET/1311/2013</p>
+        </div>
+    </footer>
+</body>
+</html>
+

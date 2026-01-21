@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema 4: Receptores | Examen Radioaficionado</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Newsreader:opsz,wght@6..72,400;6..72,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-content">
+            <div class="logo">
+                <span class="callsign">EA</span>
+                <span class="title">Examen Radioaficionado</span>
+            </div>
+            <nav class="main-nav">
+                <a href="../index.html">Inicio</a>
+                <a href="index.html" class="active">Parte I</a>
+                <a href="../parte2/index.html">Parte II</a>
+                <a href="../recursos.html">Recursos</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="content-page">
+        <nav class="breadcrumb">
+            <a href="../index.html">Inicio</a>
+            <span>›</span>
+            <a href="index.html">Parte I</a>
+            <span>›</span>
+            Tema 4
+        </nav>
+
+        <h1>Tema 4: Receptores</h1>
+        <p class="tema-meta">Tipos, diagramas de bloques, etapas y características de receptores</p>
+
+        <!-- 4.1 Tipos de receptores -->
+        <section class="content-section" id="tipos">
+            <h2>4.1 Tipos de receptores</h2>
+
+            <h3>Receptor superheterodino</h3>
+            <p>El tipo más común. Convierte la señal recibida a una frecuencia intermedia (FI) fija donde se realiza la mayor parte de la amplificación y filtrado.</p>
+
+            <div class="definition">
+                <dl>
+                    <dt>Simple conversión</dt>
+                    <dd>Una sola frecuencia intermedia. Más sencillo pero puede tener problemas con la imagen.</dd>
+                </dl>
+                <dl>
+                    <dt>Doble conversión</dt>
+                    <dd>Dos frecuencias intermedias. Primera FI alta (mejor rechazo de imagen), segunda FI baja (mejor selectividad). Usado en receptores de calidad.</dd>
+                </dl>
+            </div>
+
+            <div class="formula">
+                <strong>Principio:</strong> f<sub>FI</sub> = |f<sub>señal</sub> - f<sub>OL</sub>|
+            </div>
+
+            <h3>Receptor de conversión directa</h3>
+            <p>El oscilador local está a la misma frecuencia que la señal recibida. La señal se convierte directamente a audio. Simple, pero sensible a ruido del oscilador y requiere buena estabilidad.</p>
+        </section>
+
+        <!-- 4.2 Diagramas de bloques -->
+        <section class="content-section" id="diagramas">
+            <h2>4.2 Diagramas de bloques</h2>
+
+            <h3>Receptor superheterodino básico</h3>
+            <div class="formula">
+                Antena → Amplificador RF → Mezclador → Filtro FI → Amplificador FI → Detector → Amplificador AF → Altavoz<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↑<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VFO/Sintetizador
+            </div>
+
+            <h3>Receptor CW (A1A)</h3>
+            <p>Incluye BFO (oscilador de batido) para generar el tono audible:</p>
+            <div class="formula">
+                ... → Detector de producto ← BFO → Amplificador AF → Altavoz
+            </div>
+
+            <h3>Receptor AM (A3E)</h3>
+            <p>Usa detector de envolvente (diodo):</p>
+            <div class="formula">
+                ... → Detector de envolvente → Amplificador AF → Altavoz
+            </div>
+
+            <h3>Receptor SSB (J3E)</h3>
+            <p>Requiere BFO para reponer la portadora suprimida:</p>
+            <div class="formula">
+                ... → Detector de producto ← BFO → Amplificador AF → Altavoz
+            </div>
+
+            <h3>Receptor FM (F3E)</h3>
+            <p>Incluye limitador antes del discriminador:</p>
+            <div class="formula">
+                ... → Limitador → Discriminador FM → Amplificador AF → Altavoz
+            </div>
+        </section>
+
+        <!-- 4.3 Etapas -->
+        <section class="content-section" id="etapas">
+            <h2>4.3 Etapas del receptor</h2>
+
+            <h3>Amplificador de radiofrecuencia (RF)</h3>
+            <ul>
+                <li>Primera etapa después de la antena</li>
+                <li>Amplifica señales débiles</li>
+                <li>Proporciona selectividad inicial (preselección)</li>
+                <li>Mejora la figura de ruido del receptor</li>
+                <li>Protege al mezclador de señales fuertes</li>
+            </ul>
+
+            <h3>Oscilador local</h3>
+            <ul>
+                <li><strong>VFO (Variable Frequency Oscillator):</strong> Oscilador LC ajustable manualmente</li>
+                <li><strong>Sintetizador PLL/DDS:</strong> Controlado digitalmente, alta estabilidad</li>
+                <li>Determina la frecuencia de recepción</li>
+            </ul>
+
+            <h3>Mezclador</h3>
+            <ul>
+                <li>Combina señal RF con oscilador local</li>
+                <li>Genera frecuencia intermedia: FI = |f<sub>RF</sub> - f<sub>OL</sub>|</li>
+                <li>Tipos: diodos, transistores, circuitos integrados</li>
+                <li>Parámetro crítico: punto de intercepción (IP3)</li>
+            </ul>
+
+            <h3>Filtro de FI</h3>
+            <ul>
+                <li>Determina la selectividad del receptor</li>
+                <li>Tipos: LC, cerámicos, cristal, mecánicos, DSP</li>
+                <li>Anchos de banda típicos: CW ~500Hz, SSB ~2.4kHz, AM ~6kHz, FM ~15kHz</li>
+            </ul>
+
+            <h3>Amplificador de FI</h3>
+            <ul>
+                <li>Proporciona la mayor parte de la ganancia</li>
+                <li>Trabaja a frecuencia fija (mejor optimización)</li>
+                <li>Controlado por AGC</li>
+            </ul>
+
+            <h3>Limitador (solo FM)</h3>
+            <ul>
+                <li>Elimina variaciones de amplitud</li>
+                <li>La información en FM está en la frecuencia, no en la amplitud</li>
+                <li>Reduce ruido impulsivo y variaciones de nivel</li>
+            </ul>
+
+            <h3>Detector</h3>
+            <ul>
+                <li>Extrae la información de audio de la señal de FI</li>
+                <li>Tipo depende del modo de emisión</li>
+            </ul>
+
+            <h3>BFO (Beat Frequency Oscillator)</h3>
+            <ul>
+                <li>Necesario para CW y SSB</li>
+                <li>Genera la portadora que falta</li>
+                <li>Ajustable para USB/LSB y pitch de CW</li>
+            </ul>
+
+            <h3>Amplificador de audiofrecuencia (AF)</h3>
+            <ul>
+                <li>Amplifica la señal de audio para el altavoz</li>
+                <li>Control de volumen</li>
+                <li>Puede incluir filtros de audio</li>
+            </ul>
+
+            <h3>AGC (Control Automático de Ganancia)</h3>
+            <ul>
+                <li>Mantiene nivel de salida constante con señales variables</li>
+                <li>Evita saturación con señales fuertes</li>
+                <li>Mejora inteligibilidad con fading</li>
+                <li>Constantes de tiempo: rápido, lento, off</li>
+            </ul>
+
+            <h3>S-meter (medidor de señal)</h3>
+            <ul>
+                <li>Indica intensidad de la señal recibida</li>
+                <li>Escala S1-S9, luego dB sobre S9</li>
+                <li>Derivado de la tensión de AGC</li>
+            </ul>
+
+            <h3>Silenciador (squelch)</h3>
+            <ul>
+                <li>Silencia el audio cuando no hay señal</li>
+                <li>Elimina ruido de fondo molesto en FM</li>
+                <li>Ajustable por umbral</li>
+            </ul>
+        </section>
+
+        <!-- 4.4 Características -->
+        <section class="content-section" id="caracteristicas">
+            <h2>4.4 Características de los receptores</h2>
+
+            <h3>Selectividad</h3>
+            <p>Capacidad de separar señales en frecuencias adyacentes. Se mide por el ancho de banda a -6dB y la forma del filtro.</p>
+            <div class="formula">
+                Factor de forma = BW<sub>-60dB</sub> / BW<sub>-6dB</sub><br>
+                <small>Ideal ≈ 1, típico 1.5-2.5</small>
+            </div>
+
+            <h3>Canal adyacente</h3>
+            <p>Rechazo de señales en canales contiguos. Importante en bandas congestionadas.</p>
+
+            <h3>Sensibilidad</h3>
+            <p>Capacidad de recibir señales débiles. Se especifica como:</p>
+            <ul>
+                <li>Mínima señal para relación S/N determinada (típico: 10dB S/N)</li>
+                <li>MDS (Minimum Discernible Signal)</li>
+            </ul>
+
+            <h3>Ruido y figura de ruido</h3>
+            <div class="definition">
+                <dl>
+                    <dt>Ruido interno</dt>
+                    <dd>Generado por los propios componentes del receptor (térmico, shot, flicker).</dd>
+                </dl>
+                <dl>
+                    <dt>Figura de ruido (NF)</dt>
+                    <dd>Degradación de la relación S/N causada por el receptor. En dB. Menor = mejor.</dd>
+                </dl>
+            </div>
+
+            <h3>Estabilidad de frecuencia</h3>
+            <p>Constancia de la frecuencia del oscilador local. Importante para SSB y modos digitales. Afectada por temperatura, tensión, envejecimiento.</p>
+
+            <h3>Frecuencia imagen</h3>
+            <p>Frecuencia espuria que también produce la misma FI:</p>
+            <div class="formula">
+                f<sub>imagen</sub> = f<sub>señal</sub> ± 2 × f<sub>FI</sub>
+            </div>
+            <p>Se rechaza mediante filtros de entrada y/o FI alta.</p>
+
+            <h3>Desensibilización y bloqueo</h3>
+            <div class="definition">
+                <dl>
+                    <dt>Desensibilización</dt>
+                    <dd>Reducción de sensibilidad por presencia de señal fuerte cercana en frecuencia.</dd>
+                </dl>
+                <dl>
+                    <dt>Bloqueo</dt>
+                    <dd>Caso extremo donde una señal muy fuerte satura el receptor.</dd>
+                </dl>
+            </div>
+
+            <h3>Intermodulación</h3>
+            <p>Señales espurias generadas por mezcla de dos o más señales fuertes en las etapas no lineales del receptor.</p>
+            <div class="formula">
+                Productos de 3er orden: 2f₁ - f₂, 2f₂ - f₁<br>
+                <small>Pueden caer dentro de la banda de recepción</small>
+            </div>
+            <p>Se caracteriza por el <strong>IP3</strong> (punto de intercepción de 3er orden). Mayor IP3 = mejor comportamiento.</p>
+
+            <h3>Modulación cruzada</h3>
+            <p>La modulación de una señal fuerte aparece superpuesta a la señal deseada. Causada por no linealidad.</p>
+        </section>
+
+        <nav class="tema-nav">
+            <a href="tema3.html">
+                <span class="nav-label">Anterior</span>
+                <span class="nav-title">Tema 3: Circuitos</span>
+            </a>
+            <a href="tema5.html" class="next">
+                <span class="nav-label">Siguiente</span>
+                <span class="nav-title">Tema 5: Transmisores</span>
+            </a>
+        </nav>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>Proyecto de código abierto · <a href="https://github.com/t00mas/eaharec" target="_blank">GitHub</a></p>
+            <p class="disclaimer">Contenido basado en el Anexo II de la Orden IET/1311/2013</p>
+        </div>
+    </footer>
+</body>
+</html>
+

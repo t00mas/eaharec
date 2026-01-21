@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema 6: Antenas y líneas de transmisión | Examen Radioaficionado</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Newsreader:opsz,wght@6..72,400;6..72,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-content">
+            <div class="logo">
+                <span class="callsign">EA</span>
+                <span class="title">Examen Radioaficionado</span>
+            </div>
+            <nav class="main-nav">
+                <a href="../index.html">Inicio</a>
+                <a href="index.html" class="active">Parte I</a>
+                <a href="../parte2/index.html">Parte II</a>
+                <a href="../recursos.html">Recursos</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="content-page">
+        <nav class="breadcrumb">
+            <a href="../index.html">Inicio</a>
+            <span>›</span>
+            <a href="index.html">Parte I</a>
+            <span>›</span>
+            Tema 6
+        </nav>
+
+        <h1>Tema 6: Antenas y líneas de transmisión</h1>
+        <p class="tema-meta">Tipos de antenas, características y líneas de alimentación</p>
+
+        <!-- 6.1 Tipos de antenas -->
+        <section class="content-section" id="tipos">
+            <h2>6.1 Tipos de antenas</h2>
+
+            <h3>Dipolo de media onda (λ/2)</h3>
+            <p>Antena fundamental. Dos elementos de λ/4 cada uno.</p>
+            <div class="formula">
+                Longitud total ≈ 143 / f(MHz) metros (con factor de acortamiento)<br>
+                Impedancia en el centro: ~73Ω (en espacio libre)
+            </div>
+
+            <h4>Alimentado en el centro</h4>
+            <ul>
+                <li>Impedancia baja (~73Ω), buena adaptación a coaxial 50-75Ω</li>
+                <li>Máximo de corriente, mínimo de tensión en punto de alimentación</li>
+                <li>Patrón omnidireccional perpendicular al eje</li>
+            </ul>
+
+            <h4>Alimentado en un extremo</h4>
+            <ul>
+                <li>Impedancia alta (~2500Ω)</li>
+                <li>Requiere adaptador de impedancia</li>
+                <li>Menor rendimiento que alimentación central</li>
+            </ul>
+
+            <h3>Dipolo plegado (folded dipole)</h3>
+            <ul>
+                <li>Dos conductores paralelos conectados en los extremos</li>
+                <li>Impedancia ~300Ω (4× dipolo simple)</li>
+                <li>Mayor ancho de banda</li>
+                <li>Usado como elemento de antenas Yagi</li>
+            </ul>
+
+            <h3>Antena vertical λ/4</h3>
+            <ul>
+                <li>Cuarto de onda vertical sobre plano de tierra</li>
+                <li>Impedancia ~36Ω (con plano de tierra perfecto)</li>
+                <li>Omnidireccional en azimut</li>
+                <li>Radiación en ángulo bajo, ideal para DX</li>
+            </ul>
+            <div class="formula">
+                Longitud ≈ 71.5 / f(MHz) metros
+            </div>
+
+            <h3>Plano de tierra (ground plane)</h3>
+            <ul>
+                <li>Vertical λ/4 con radiales</li>
+                <li>Radiales horizontales: Z ≈ 36Ω</li>
+                <li>Radiales a 45°: Z ≈ 50Ω (mejor adaptación)</li>
+                <li>Popular en VHF/UHF</li>
+            </ul>
+
+            <h3>Antena Yagi-Uda</h3>
+            <ul>
+                <li>Antena directiva con elementos parásitos</li>
+                <li><strong>Reflector:</strong> ~5% más largo que el dipolo, detrás</li>
+                <li><strong>Elemento activo:</strong> dipolo o dipolo plegado</li>
+                <li><strong>Directores:</strong> ~5% más cortos, delante</li>
+                <li>Más elementos = más ganancia y directividad</li>
+            </ul>
+            <div class="formula">
+                Ganancia típica: 6-15 dBd según número de elementos<br>
+                <small>dBd = dB sobre dipolo</small>
+            </div>
+
+            <h3>Antenas de apertura</h3>
+
+            <h4>Antena parabólica</h4>
+            <ul>
+                <li>Reflector parabólico con alimentador en el foco</li>
+                <li>Muy directiva, alta ganancia</li>
+                <li>Usada en microondas y satélites</li>
+            </ul>
+            <div class="formula">
+                G ≈ (π × D / λ)² × η<br>
+                <small>D = diámetro, η = eficiencia (~0.5-0.7)</small>
+            </div>
+
+            <h4>Bocina (horn)</h4>
+            <ul>
+                <li>Transición gradual de guiaondas a espacio libre</li>
+                <li>Usada como alimentador de parábolas</li>
+                <li>Ganancia moderada</li>
+            </ul>
+
+            <h3>Dipolo con trampas</h3>
+            <ul>
+                <li>Circuitos LC (trampas) a lo largo del dipolo</li>
+                <li>Permiten operación multibanda</li>
+                <li>Cada trampa "acorta" eléctricamente la antena en su frecuencia</li>
+            </ul>
+        </section>
+
+        <!-- 6.2 Características -->
+        <section class="content-section" id="caracteristicas">
+            <h2>6.2 Características de las antenas</h2>
+
+            <h3>Distribución de tensión y corriente</h3>
+            <p>En una antena resonante:</p>
+            <ul>
+                <li><strong>Dipolo λ/2:</strong> Máximo de corriente en el centro, máximo de tensión en los extremos</li>
+                <li><strong>Vertical λ/4:</strong> Máximo de corriente en la base, máximo de tensión en la punta</li>
+            </ul>
+
+            <h3>Impedancia en el punto de alimentación</h3>
+            <table>
+                <thead>
+                    <tr><th>Antena</th><th>Impedancia típica</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Dipolo λ/2 (centro)</td><td>~73Ω</td></tr>
+                    <tr><td>Dipolo plegado</td><td>~300Ω</td></tr>
+                    <tr><td>Vertical λ/4 (plano tierra perfecto)</td><td>~36Ω</td></tr>
+                    <tr><td>Ground plane (radiales 45°)</td><td>~50Ω</td></tr>
+                    <tr><td>Yagi (elemento activo)</td><td>20-50Ω</td></tr>
+                </tbody>
+            </table>
+
+            <h3>Impedancia de antenas no resonantes</h3>
+            <ul>
+                <li>Antena corta (< λ/4): Impedancia <strong>capacitiva</strong></li>
+                <li>Antena larga (> λ/4): Impedancia <strong>inductiva</strong></li>
+            </ul>
+
+            <h3>Polarización</h3>
+            <ul>
+                <li><strong>Horizontal:</strong> Dipolo paralelo al suelo, Yagi horizontal</li>
+                <li><strong>Vertical:</strong> Vertical, ground plane, Yagi vertical</li>
+                <li><strong>Circular:</strong> Antenas helicoidales, crossed-yagi</li>
+            </ul>
+            <p>Pérdida por desadaptación de polarización: 20-30 dB entre vertical y horizontal.</p>
+
+            <h3>Ganancia</h3>
+            <div class="definition">
+                <dl>
+                    <dt>dBi</dt>
+                    <dd>Ganancia respecto a antena isotrópica (radiador ideal omnidireccional).</dd>
+                </dl>
+                <dl>
+                    <dt>dBd</dt>
+                    <dd>Ganancia respecto a dipolo de media onda.</dd>
+                </dl>
+            </div>
+            <div class="formula">
+                dBi = dBd + 2.15
+            </div>
+
+            <h3>Directividad</h3>
+            <p>Concentración de energía en una dirección. Relacionada con la ganancia pero sin considerar pérdidas.</p>
+
+            <h3>Eficiencia</h3>
+            <p>Relación entre potencia radiada y potencia entregada. Depende de pérdidas óhmicas, suelo, etc.</p>
+
+            <h3>Área de captura (apertura efectiva)</h3>
+            <div class="formula">
+                A<sub>e</sub> = G × λ² / (4π)
+            </div>
+            <p>Área equivalente que "captura" la energía de la onda incidente.</p>
+
+            <h3>Potencia Efectiva Radiada (PER/ERP)</h3>
+            <div class="formula">
+                PER = P<sub>transmisor</sub> × G<sub>antena</sub><br>
+                <small>En dB: PER(dBW) = P(dBW) + G(dBd)</small>
+            </div>
+
+            <h3>Relación adelante-atrás (F/B)</h3>
+            <p>Relación entre ganancia máxima (frente) y ganancia en dirección opuesta (espalda). En dB.</p>
+
+            <h3>Diagramas de radiación</h3>
+            <ul>
+                <li><strong>Plano horizontal (azimut):</strong> Vista desde arriba</li>
+                <li><strong>Plano vertical (elevación):</strong> Vista lateral</li>
+                <li>Muestran lóbulo principal, lóbulos secundarios, nulos</li>
+            </ul>
+        </section>
+
+        <!-- 6.3 Líneas de transmisión -->
+        <section class="content-section" id="lineas">
+            <h2>6.3 Líneas de transmisión</h2>
+
+            <h3>Línea de conductores paralelos (escalerilla)</h3>
+            <ul>
+                <li>Dos conductores paralelos separados</li>
+                <li>Impedancia típica: 300-600Ω</li>
+                <li>Bajas pérdidas</li>
+                <li>Sensible a objetos cercanos</li>
+                <li>Línea equilibrada (balanceada)</li>
+            </ul>
+
+            <h3>Cable coaxial</h3>
+            <ul>
+                <li>Conductor central + malla exterior + dieléctrico</li>
+                <li>Línea no equilibrada (desbalanceada)</li>
+                <li>Insensible al entorno</li>
+                <li>Fácil de instalar</li>
+            </ul>
+            <table>
+                <thead>
+                    <tr><th>Tipo</th><th>Z₀</th><th>Pérdidas</th><th>Uso</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>RG-58</td><td>50Ω</td><td>Altas</td><td>HF baja potencia, VHF cortas distancias</td></tr>
+                    <tr><td>RG-213</td><td>50Ω</td><td>Medias</td><td>HF media potencia</td></tr>
+                    <tr><td>RG-8/RG-8X</td><td>50Ω</td><td>Medias</td><td>Uso general</td></tr>
+                    <tr><td>LMR-400</td><td>50Ω</td><td>Bajas</td><td>VHF/UHF largas distancias</td></tr>
+                    <tr><td>RG-59/RG-6</td><td>75Ω</td><td>Variables</td><td>TV, recepción</td></tr>
+                </tbody>
+            </table>
+
+            <h3>Guiaondas</h3>
+            <ul>
+                <li>Tubo metálico hueco (rectangular o circular)</li>
+                <li>Para microondas (>1 GHz)</li>
+                <li>Mínimas pérdidas a frecuencias muy altas</li>
+                <li>Dimensiones determinan frecuencia de corte</li>
+            </ul>
+
+            <h3>Impedancia característica</h3>
+            <div class="formula">
+                Z₀ = √(L/C)<br>
+                <small>L = inductancia por unidad de longitud, C = capacidad por unidad de longitud</small>
+            </div>
+            <p>Depende de geometría y materiales, NO de la longitud.</p>
+
+            <h3>Factor de velocidad</h3>
+            <div class="formula">
+                v = c × VF<br>
+                <small>VF típico: 0.66 (polietileno), 0.80 (espuma), 0.95 (aire)</small>
+            </div>
+            <p>La velocidad de propagación en la línea es menor que en el vacío. Importante para calcular longitudes eléctricas.</p>
+
+            <h3>ROE (Relación de Ondas Estacionarias)</h3>
+            <div class="formula">
+                ROE = (1 + |Γ|) / (1 - |Γ|) = Z<sub>L</sub>/Z₀ o Z₀/Z<sub>L</sub> (el mayor)<br>
+                <small>Γ = coeficiente de reflexión</small>
+            </div>
+            <ul>
+                <li>ROE = 1:1 → Adaptación perfecta</li>
+                <li>ROE = 2:1 → Aceptable</li>
+                <li>ROE = 3:1 → Desadaptación moderada</li>
+                <li>ROE = ∞ → Cortocircuito o circuito abierto</li>
+            </ul>
+
+            <h3>Pérdidas en la línea</h3>
+            <ul>
+                <li>Pérdidas óhmicas (conductor)</li>
+                <li>Pérdidas en el dieléctrico</li>
+                <li>Aumentan con la frecuencia y la longitud</li>
+                <li>Aumentan con la desadaptación (ROE alto)</li>
+            </ul>
+
+            <h3>Balun</h3>
+            <p>Dispositivo que convierte entre líneas balanceadas y desbalanceadas.</p>
+            <ul>
+                <li><strong>1:1</strong> Solo cambio de balance, no de impedancia</li>
+                <li><strong>4:1</strong> Transforma impedancia (ej: 200Ω a 50Ω)</li>
+                <li><strong>Tipos:</strong> Transformador, línea de transmisión (choke balun)</li>
+            </ul>
+
+            <h3>Línea λ/4 como transformador</h3>
+            <div class="formula">
+                Z<sub>entrada</sub> = Z₀² / Z<sub>carga</sub>
+            </div>
+            <p>Un tramo de λ/4 transforma impedancias. Usado en adaptadores de antena.</p>
+
+            <h3>Líneas abiertas y en cortocircuito</h3>
+            <ul>
+                <li><strong>λ/4 abierta:</strong> Se comporta como cortocircuito (resonador serie)</li>
+                <li><strong>λ/4 cortocircuito:</strong> Se comporta como circuito abierto (resonador paralelo)</li>
+                <li>Usadas como stubs para filtros y adaptación</li>
+            </ul>
+
+            <h3>Acoplador/sintonizador de antena (ATU)</h3>
+            <ul>
+                <li>Adapta impedancia entre transmisor y línea/antena</li>
+                <li>Redes típicas: L, Pi, T</li>
+                <li>NO reduce pérdidas en la línea por desadaptación</li>
+                <li>Permite usar antenas no resonantes</li>
+            </ul>
+        </section>
+
+        <nav class="tema-nav">
+            <a href="tema5.html">
+                <span class="nav-label">Anterior</span>
+                <span class="nav-title">Tema 5: Transmisores</span>
+            </a>
+            <a href="tema7.html" class="next">
+                <span class="nav-label">Siguiente</span>
+                <span class="nav-title">Tema 7: Propagación</span>
+            </a>
+        </nav>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>Proyecto de código abierto · <a href="https://github.com/t00mas/eaharec" target="_blank">GitHub</a></p>
+            <p class="disclaimer">Contenido basado en el Anexo II de la Orden IET/1311/2013</p>
+        </div>
+    </footer>
+</body>
+</html>
+

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema 9: Interferencia e inmunidad | Examen Radioaficionado</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Newsreader:opsz,wght@6..72,400;6..72,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-content">
+            <div class="logo">
+                <span class="callsign">EA</span>
+                <span class="title">Examen Radioaficionado</span>
+            </div>
+            <nav class="main-nav">
+                <a href="../index.html">Inicio</a>
+                <a href="index.html" class="active">Parte I</a>
+                <a href="../parte2/index.html">Parte II</a>
+                <a href="../recursos.html">Recursos</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="content-page">
+        <nav class="breadcrumb">
+            <a href="../index.html">Inicio</a>
+            <span>›</span>
+            <a href="index.html">Parte I</a>
+            <span>›</span>
+            Tema 9
+        </nav>
+
+        <h1>Tema 9: Interferencia e inmunidad</h1>
+        <p class="tema-meta">Compatibilidad electromagnética y medidas contra interferencias</p>
+
+        <section class="content-section" id="emc">
+            <h2>9.1 Compatibilidad electromagnética (EMC)</h2>
+
+            <p>La EMC es la capacidad de un dispositivo de funcionar satisfactoriamente en su entorno electromagnético sin causar perturbaciones intolerables a otros dispositivos.</p>
+
+            <div class="definition">
+                <dl>
+                    <dt>Emisión</dt>
+                    <dd>Energía electromagnética que un dispositivo genera y puede afectar a otros.</dd>
+                </dl>
+                <dl>
+                    <dt>Susceptibilidad/Inmunidad</dt>
+                    <dd>Capacidad de un dispositivo de funcionar correctamente en presencia de perturbaciones electromagnéticas.</dd>
+                </dl>
+            </div>
+        </section>
+
+        <section class="content-section" id="tipos">
+            <h2>9.2 Tipos de interferencias</h2>
+
+            <h3>Bloqueo</h3>
+            <p>Una señal fuerte satura las etapas de entrada del receptor, reduciendo su sensibilidad o impidiendo la recepción.</p>
+
+            <h3>Interferencia con la señal deseada</h3>
+            <p>Señales que caen dentro del ancho de banda de recepción y se superponen a la señal deseada.</p>
+
+            <h3>Intermodulación</h3>
+            <p>Dos o más señales fuertes se mezclan en elementos no lineales, produciendo productos espurios que pueden caer en frecuencias de interés.</p>
+            <div class="formula">
+                Productos de 3er orden: 2f₁ - f₂, 2f₂ - f₁<br>
+                <small>Problemáticos porque caen cerca de las señales originales</small>
+            </div>
+
+            <h3>Detección en circuitos de audio</h3>
+            <p>Señales RF rectificadas por uniones semiconductoras en amplificadores de audio, causando que se escuche la transmisión.</p>
+        </section>
+
+        <section class="content-section" id="causas">
+            <h2>9.3 Causas de interferencias</h2>
+
+            <h3>Intensidad de campo del transmisor</h3>
+            <ul>
+                <li>Mayor potencia = mayor campo electromagnético</li>
+                <li>Menor distancia = mayor intensidad de campo</li>
+                <li>Antenas directivas concentran el campo</li>
+            </ul>
+
+            <h3>Emisiones no deseadas del transmisor</h3>
+
+            <h4>Emisiones no esenciales (spurious)</h4>
+            <ul>
+                <li>Armónicos de la frecuencia fundamental</li>
+                <li>Productos de mezcla parásitos</li>
+                <li>Emisiones de osciladores parásitos</li>
+            </ul>
+
+            <h4>Emisiones fuera de banda</h4>
+            <ul>
+                <li>Bandas laterales excesivas por sobremodulación</li>
+                <li>"Splatter" en SSB</li>
+                <li>"Clicks" en CW por flancos demasiado rápidos</li>
+            </ul>
+
+            <h3>Vías de entrada en equipos afectados</h3>
+
+            <h4>Vía antena</h4>
+            <p>La señal interferente entra por la antena del equipo afectado (TV, radio, etc.).</p>
+
+            <h4>Vía cables conectados</h4>
+            <ul>
+                <li>Cable de alimentación</li>
+                <li>Cables de altavoces</li>
+                <li>Cables de señal</li>
+            </ul>
+            <p>Actúan como antenas captando RF.</p>
+
+            <h4>Radiación directa</h4>
+            <p>El campo RF atraviesa la carcasa del equipo y afecta directamente a los circuitos internos.</p>
+        </section>
+
+        <section class="content-section" id="medidas">
+            <h2>9.4 Medidas contra las interferencias</h2>
+
+            <h3>En el transmisor (prevención)</h3>
+
+            <h4>Filtrado de salida</h4>
+            <ul>
+                <li>Filtros paso bajo para eliminar armónicos</li>
+                <li>Filtros de banda para espurios</li>
+                <li>Filtro en π en la salida del PA</li>
+            </ul>
+
+            <h4>Blindaje</h4>
+            <ul>
+                <li>Carcasa metálica cerrada</li>
+                <li>Pasantes de filtro en conexiones</li>
+            </ul>
+
+            <h4>Buenas prácticas</h4>
+            <ul>
+                <li>No sobremodular</li>
+                <li>Usar potencia mínima necesaria</li>
+                <li>Mantener equipo bien ajustado</li>
+            </ul>
+
+            <h3>En el equipo afectado (eliminación)</h3>
+
+            <h4>Filtrado</h4>
+            <ul>
+                <li>Filtros de red en cable de alimentación</li>
+                <li>Ferritas en cables</li>
+                <li>Filtros paso alto en entrada de antena TV</li>
+                <li>Condensadores de desacoplo</li>
+            </ul>
+
+            <h4>Desacoplo</h4>
+            <ul>
+                <li>Condensadores cerámicos cerca de semiconductores</li>
+                <li>Chokes de RF en líneas de señal</li>
+            </ul>
+
+            <h4>Apantallamiento</h4>
+            <ul>
+                <li>Carcasas metálicas</li>
+                <li>Cables apantallados</li>
+                <li>Mallas sobre cables</li>
+            </ul>
+
+            <h3>En la instalación</h3>
+            <ul>
+                <li>Separación física entre transmisor y equipos sensibles</li>
+                <li>Buena toma de tierra</li>
+                <li>Cables de alimentación y RF separados</li>
+                <li>Orientación de antenas</li>
+            </ul>
+        </section>
+
+        <section class="content-section" id="diagnostico">
+            <h2>9.5 Diagnóstico de interferencias</h2>
+
+            <h3>Identificar la fuente</h3>
+            <ul>
+                <li>¿La interferencia coincide con la transmisión?</li>
+                <li>¿Se produce en una frecuencia específica o en todas?</li>
+                <li>¿Afecta a un solo equipo o a varios?</li>
+            </ul>
+
+            <h3>Determinar la vía de entrada</h3>
+            <ul>
+                <li>Desconectar antena del equipo afectado</li>
+                <li>Desconectar cables uno a uno</li>
+                <li>Usar equipo a pilas (elimina vía red)</li>
+            </ul>
+
+            <h3>Aplicar medidas</h3>
+            <ul>
+                <li>Empezar por la vía más probable</li>
+                <li>Probar filtros y ferritas</li>
+                <li>Documentar qué funciona</li>
+            </ul>
+        </section>
+
+        <section class="content-section" id="responsabilidad">
+            <h2>9.6 Aspectos legales</h2>
+
+            <ul>
+                <li>El radioaficionado debe evitar causar interferencias perjudiciales</li>
+                <li>Los equipos deben cumplir normativas de EMC</li>
+                <li>Ante denuncias, colaborar con la inspección</li>
+                <li>Los equipos modernos deben tener cierto nivel de inmunidad (marcado CE)</li>
+            </ul>
+        </section>
+
+        <nav class="tema-nav">
+            <a href="tema8.html">
+                <span class="nav-label">Anterior</span>
+                <span class="nav-title">Tema 8: Medidas</span>
+            </a>
+            <a href="tema10.html" class="next">
+                <span class="nav-label">Siguiente</span>
+                <span class="nav-title">Tema 10: Seguridad</span>
+            </a>
+        </nav>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>Proyecto de código abierto · <a href="https://github.com/t00mas/eaharec" target="_blank">GitHub</a></p>
+            <p class="disclaimer">Contenido basado en el Anexo II de la Orden IET/1311/2013</p>
+        </div>
+    </footer>
+</body>
+</html>
+

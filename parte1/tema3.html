@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema 3: Circuitos | Examen Radioaficionado</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Newsreader:opsz,wght@6..72,400;6..72,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-content">
+            <div class="logo">
+                <span class="callsign">EA</span>
+                <span class="title">Examen Radioaficionado</span>
+            </div>
+            <nav class="main-nav">
+                <a href="../index.html">Inicio</a>
+                <a href="index.html" class="active">Parte I</a>
+                <a href="../parte2/index.html">Parte II</a>
+                <a href="../recursos.html">Recursos</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="content-page">
+        <nav class="breadcrumb">
+            <a href="../index.html">Inicio</a>
+            <span>›</span>
+            <a href="index.html">Parte I</a>
+            <span>›</span>
+            Tema 3
+        </nav>
+
+        <h1>Tema 3: Circuitos</h1>
+        <p class="tema-meta">Combinaciones de componentes, filtros, fuentes, amplificadores y osciladores</p>
+
+        <!-- 3.1 Combinación de componentes -->
+        <section class="content-section" id="combinacion">
+            <h2>3.1 Combinación de componentes</h2>
+            
+            <h3>Resistencias en serie</h3>
+            <div class="formula">
+                R<sub>total</sub> = R₁ + R₂ + R₃ + ...
+            </div>
+
+            <h3>Resistencias en paralelo</h3>
+            <div class="formula">
+                1/R<sub>total</sub> = 1/R₁ + 1/R₂ + 1/R₃ + ...<br>
+                <small>Para dos resistencias: R<sub>total</sub> = (R₁ × R₂) / (R₁ + R₂)</small>
+            </div>
+
+            <h3>Condensadores en serie</h3>
+            <div class="formula">
+                1/C<sub>total</sub> = 1/C₁ + 1/C₂ + 1/C₃ + ...<br>
+                <small>(Fórmula inversa a resistencias)</small>
+            </div>
+
+            <h3>Condensadores en paralelo</h3>
+            <div class="formula">
+                C<sub>total</sub> = C₁ + C₂ + C₃ + ...
+            </div>
+
+            <h3>Bobinas en serie (sin acoplamiento mutuo)</h3>
+            <div class="formula">
+                L<sub>total</sub> = L₁ + L₂ + L₃ + ...
+            </div>
+
+            <h3>Bobinas en paralelo (sin acoplamiento mutuo)</h3>
+            <div class="formula">
+                1/L<sub>total</sub> = 1/L₁ + 1/L₂ + 1/L₃ + ...
+            </div>
+
+            <h3>Impedancia</h3>
+            <div class="formula">
+                Z = √(R² + X²)<br>
+                <small>X = X<sub>L</sub> - X<sub>C</sub> (reactancia neta)</small>
+            </div>
+
+            <h3>Comportamiento a altas frecuencias</h3>
+            <ul>
+                <li><strong>Resistencias:</strong> presentan inductancia parásita (terminales) y capacidad parásita</li>
+                <li><strong>Condensadores:</strong> presentan inductancia en serie (ESL) y resistencia (ESR)</li>
+                <li><strong>Bobinas:</strong> presentan capacidad parásita entre espiras, autorresonancia</li>
+            </ul>
+        </section>
+
+        <!-- 3.2 Filtros -->
+        <section class="content-section" id="filtros">
+            <h2>3.2 Filtros</h2>
+
+            <h3>Circuitos sintonizados</h3>
+            
+            <h4>Circuito LC serie (resonancia serie)</h4>
+            <p>A la frecuencia de resonancia, la impedancia es mínima (solo R).</p>
+            <div class="formula">
+                f<sub>0</sub> = 1 / (2π√(LC))
+            </div>
+
+            <h4>Circuito LC paralelo (resonancia paralela)</h4>
+            <p>A la frecuencia de resonancia, la impedancia es máxima.</p>
+            <div class="formula">
+                f<sub>0</sub> = 1 / (2π√(LC))
+            </div>
+
+            <h3>Factor de calidad Q</h3>
+            <div class="formula">
+                Q = f<sub>0</sub> / BW = X<sub>L</sub> / R = X<sub>C</sub> / R
+            </div>
+            <p>Q alto → banda estrecha, mayor selectividad.</p>
+
+            <h3>Ancho de banda</h3>
+            <div class="formula">
+                BW = f<sub>0</sub> / Q
+            </div>
+
+            <h3>Tipos de filtros</h3>
+            <table>
+                <thead>
+                    <tr><th>Tipo</th><th>Función</th><th>Aplicación</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Paso bajo</td><td>Deja pasar frecuencias bajas, atenúa altas</td><td>Eliminar armónicos, audio</td></tr>
+                    <tr><td>Paso alto</td><td>Deja pasar frecuencias altas, atenúa bajas</td><td>Eliminar DC, zumbido</td></tr>
+                    <tr><td>Paso banda</td><td>Deja pasar un rango de frecuencias</td><td>Selectividad en receptores</td></tr>
+                    <tr><td>Rechazo de banda (notch)</td><td>Atenúa un rango específico</td><td>Eliminar interferencias</td></tr>
+                </tbody>
+            </table>
+
+            <h3>Filtros en Pi y en T</h3>
+            <ul>
+                <li><strong>Filtro en Pi (π):</strong> Dos condensadores en paralelo con bobina en serie. Común en salida de transmisores.</li>
+                <li><strong>Filtro en T:</strong> Dos bobinas en serie con condensador en paralelo.</li>
+            </ul>
+
+            <h3>Filtros de cuarzo</h3>
+            <p>Cristales de cuarzo como elementos resonantes. Q extremadamente alto (10.000-100.000). Usados para filtros de FI en receptores SSB/CW.</p>
+
+            <h3>Filtros digitales</h3>
+            <p>Implementados mediante DSP:</p>
+            <ul>
+                <li><strong>FIR (Finite Impulse Response):</strong> Respuesta finita, fase lineal, estables</li>
+                <li><strong>IIR (Infinite Impulse Response):</strong> Respuesta infinita, más eficientes, pueden ser inestables</li>
+            </ul>
+        </section>
+
+        <!-- 3.3 Fuentes de alimentación -->
+        <section class="content-section" id="fuentes">
+            <h2>3.3 Fuentes de alimentación</h2>
+
+            <h3>Rectificadores</h3>
+            <table>
+                <thead>
+                    <tr><th>Tipo</th><th>Descripción</th><th>Rizado</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Media onda</td><td>Un diodo, usa solo semiciclo positivo</td><td>Alto (frecuencia = f red)</td></tr>
+                    <tr><td>Onda completa (toma central)</td><td>Dos diodos, transformador con toma central</td><td>Menor (f = 2× f red)</td></tr>
+                    <tr><td>Puente de diodos</td><td>Cuatro diodos, usa ambos semiciclos</td><td>Menor (f = 2× f red)</td></tr>
+                </tbody>
+            </table>
+
+            <h3>Filtrado</h3>
+            <p>Condensadores electrolíticos de gran capacidad para reducir el rizado. A veces combinados con bobinas (filtro LC).</p>
+            <div class="formula">
+                V<sub>rizado</sub> ≈ I<sub>carga</sub> / (f × C)
+            </div>
+
+            <h3>Estabilización (regulación)</h3>
+            <ul>
+                <li><strong>Zener:</strong> Regulación simple, baja potencia</li>
+                <li><strong>Reguladores integrados:</strong> 78xx (positivo), 79xx (negativo). Ejemplo: 7812 = +12V</li>
+                <li><strong>Reguladores ajustables:</strong> LM317, LM337</li>
+            </ul>
+
+            <h3>Fuentes conmutadas (switching)</h3>
+            <p>Convierten DC a alta frecuencia, transforman y rectifican. Ventajas: alta eficiencia, menor tamaño/peso.</p>
+            <div class="definition">
+                <dl>
+                    <dt>Consideraciones</dt>
+                    <dd>
+                        <strong>Aislamiento:</strong> Transformador de alta frecuencia proporciona aislamiento galvánico.<br>
+                        <strong>EMC:</strong> Generan ruido RF, requieren filtrado y apantallamiento adecuados.
+                    </dd>
+                </dl>
+            </div>
+        </section>
+
+        <!-- 3.4 Amplificadores -->
+        <section class="content-section" id="amplificadores">
+            <h2>3.4 Amplificadores</h2>
+
+            <h3>Ganancia</h3>
+            <div class="formula">
+                Ganancia de tensión: A<sub>v</sub> = V<sub>salida</sub> / V<sub>entrada</sub><br>
+                Ganancia de potencia: A<sub>p</sub> = P<sub>salida</sub> / P<sub>entrada</sub><br>
+                En dB: G(dB) = 10 log(P<sub>out</sub>/P<sub>in</sub>) = 20 log(V<sub>out</sub>/V<sub>in</sub>)
+            </div>
+
+            <h3>Respuesta en frecuencia y ancho de banda</h3>
+            <p>Rango de frecuencias donde la ganancia se mantiene dentro de -3dB del valor máximo.</p>
+
+            <h3>Clases de amplificadores</h3>
+            <table>
+                <thead>
+                    <tr><th>Clase</th><th>Ángulo de conducción</th><th>Rendimiento</th><th>Distorsión</th><th>Uso</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>A</td><td>360°</td><td>~25-50%</td><td>Baja</td><td>Audio, pequeña señal</td></tr>
+                    <tr><td>AB</td><td>180°-360°</td><td>~50-70%</td><td>Media</td><td>Audio potencia</td></tr>
+                    <tr><td>B</td><td>180°</td><td>~70%</td><td>Alta (cruce)</td><td>Push-pull audio</td></tr>
+                    <tr><td>C</td><td><180°</td><td>~80%</td><td>Alta</td><td>RF potencia (sintonizado)</td></tr>
+                </tbody>
+            </table>
+
+            <h3>Distorsión</h3>
+            <div class="definition">
+                <dl>
+                    <dt>Distorsión armónica</dt>
+                    <dd>Generación de armónicos de la señal de entrada. Se especifica como THD (Total Harmonic Distortion).</dd>
+                </dl>
+                <dl>
+                    <dt>Distorsión por intermodulación (IMD)</dt>
+                    <dd>Con dos o más señales de entrada, aparecen productos en frecuencias suma y diferencia. Crítica en transmisores y receptores.</dd>
+                </dl>
+            </div>
+
+            <h3>Sobrecarga de etapas</h3>
+            <p>Cuando la señal excede el rango lineal del amplificador, se produce recorte (clipping) y distorsión severa. En transmisores causa splatter (interferencia a canales adyacentes).</p>
+        </section>
+
+        <!-- 3.5 Detectores -->
+        <section class="content-section" id="detectores">
+            <h2>3.5 Detectores/Demoduladores</h2>
+
+            <h3>Detectores de AM</h3>
+            <ul>
+                <li><strong>Detector de envolvente:</strong> Diodo + RC. Simple, para AM convencional (A3E).</li>
+                <li><strong>Detector de producto:</strong> Mezclador con oscilador local. Para SSB y CW.</li>
+            </ul>
+
+            <h3>Oscilador de batido (BFO)</h3>
+            <p>Oscilador local necesario para demodular CW y SSB. Genera la portadora que falta.</p>
+
+            <h3>Demoduladores de FM</h3>
+            <ul>
+                <li><strong>Detector de pendiente:</strong> Usa la pendiente de un circuito sintonizado descentrado.</li>
+                <li><strong>Discriminador (Foster-Seeley):</strong> Dos circuitos sintonizados, mejor linealidad.</li>
+                <li><strong>Detector de relación (ratio detector):</strong> Insensible a variaciones de amplitud.</li>
+                <li><strong>PLL:</strong> Detector moderno, muy lineal.</li>
+            </ul>
+        </section>
+
+        <!-- 3.6 Osciladores -->
+        <section class="content-section" id="osciladores">
+            <h2>3.6 Osciladores</h2>
+
+            <h3>Condiciones de oscilación (Barkhausen)</h3>
+            <ol>
+                <li>Ganancia del lazo ≥ 1 (|Aβ| ≥ 1)</li>
+                <li>Desfase total del lazo = 0° (o múltiplo de 360°)</li>
+            </ol>
+
+            <h3>Realimentación</h3>
+            <ul>
+                <li><strong>Oscilación intencionada:</strong> Realimentación positiva controlada para generar señal.</li>
+                <li><strong>Oscilación no intencionada:</strong> Realimentación parásita en amplificadores. Causa inestabilidad.</li>
+            </ul>
+
+            <h3>Factores que afectan la frecuencia</h3>
+            <ul>
+                <li>Valores de L y C del circuito resonante</li>
+                <li>Capacidades parásitas</li>
+                <li>Temperatura (afecta a componentes)</li>
+                <li>Tensión de alimentación</li>
+                <li>Carga</li>
+            </ul>
+
+            <h3>Osciladores LC</h3>
+            <ul>
+                <li><strong>Hartley:</strong> Bobina con toma central</li>
+                <li><strong>Colpitts:</strong> Divisor capacitivo</li>
+                <li><strong>Clapp:</strong> Variante de Colpitts, mejor estabilidad</li>
+            </ul>
+
+            <h3>Osciladores a cristal</h3>
+            <p>Cristal de cuarzo como elemento resonante. Muy alta estabilidad (partes por millón).</p>
+            
+            <div class="definition">
+                <dl>
+                    <dt>Oscilador de sobretonos (overtone)</dt>
+                    <dd>Usa armónicos mecánicos del cristal para frecuencias más altas (3º, 5º, 7º sobretono).</dd>
+                </dl>
+            </div>
+
+            <h3>VCO (Voltage Controlled Oscillator)</h3>
+            <p>Oscilador cuya frecuencia varía con una tensión de control. Usa varicap. Fundamental en sintetizadores PLL.</p>
+
+            <h3>Ruido de fase</h3>
+            <p>Fluctuaciones aleatorias de la fase/frecuencia del oscilador. Importante en sistemas de comunicaciones. Aparece como "faldas" alrededor de la portadora en el analizador de espectros.</p>
+        </section>
+
+        <!-- 3.7 PLL -->
+        <section class="content-section" id="pll">
+            <h2>3.7 Sintetizadores de frecuencia (PLL)</h2>
+
+            <h3>Lazo de enganche de fase (PLL)</h3>
+            <p>Sistema realimentado que sincroniza un VCO con una referencia estable.</p>
+
+            <h3>Componentes del PLL</h3>
+            <ul>
+                <li><strong>Detector de fase:</strong> Compara fase del VCO con la referencia</li>
+                <li><strong>Filtro de lazo:</strong> Filtra el error, determina respuesta del sistema</li>
+                <li><strong>VCO:</strong> Genera la frecuencia de salida</li>
+                <li><strong>Divisor programable:</strong> Divide la frecuencia del VCO por N</li>
+            </ul>
+
+            <h3>Funcionamiento</h3>
+            <div class="formula">
+                f<sub>salida</sub> = N × f<sub>referencia</sub>
+            </div>
+            <p>Cambiando N (divisor programable) se obtienen diferentes frecuencias de salida, todas con la estabilidad de la referencia (cristal).</p>
+
+            <h3>Aplicaciones</h3>
+            <ul>
+                <li>Sintetizadores de frecuencia en transceivers</li>
+                <li>Demoduladores FM</li>
+                <li>Recuperación de reloj en sistemas digitales</li>
+            </ul>
+        </section>
+
+        <!-- 3.8 DSP -->
+        <section class="content-section" id="dsp">
+            <h2>3.8 Circuitos con procesadores digitales de señal (DSP)</h2>
+
+            <h3>Filtros digitales</h3>
+            <ul>
+                <li><strong>IIR:</strong> Eficientes, pueden emular filtros analógicos clásicos</li>
+                <li><strong>FIR:</strong> Fase lineal, siempre estables, más predecibles</li>
+            </ul>
+
+            <h3>Síntesis digital directa (DDS)</h3>
+            <p>Genera formas de onda mediante tabla de valores y conversor D/A. Permite cambios de frecuencia instantáneos, muy baja fase de ruido.</p>
+
+            <h3>Otros circuitos DSP</h3>
+            <ul>
+                <li>Moduladores y demoduladores digitales</li>
+                <li>Reducción de ruido</li>
+                <li>Cancelación de interferencias</li>
+                <li>Ecualización automática</li>
+            </ul>
+        </section>
+
+        <nav class="tema-nav">
+            <a href="tema2.html">
+                <span class="nav-label">Anterior</span>
+                <span class="nav-title">Tema 2: Componentes</span>
+            </a>
+            <a href="tema4.html" class="next">
+                <span class="nav-label">Siguiente</span>
+                <span class="nav-title">Tema 4: Receptores</span>
+            </a>
+        </nav>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>Proyecto de código abierto · <a href="https://github.com/t00mas/eaharec" target="_blank">GitHub</a></p>
+            <p class="disclaimer">Contenido basado en el Anexo II de la Orden IET/1311/2013</p>
+        </div>
+    </footer>
+</body>
+</html>
+

@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema 1: Teoría de la electricidad | Examen Radioaficionado</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Newsreader:opsz,wght@6..72,400;6..72,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-content">
+            <div class="logo">
+                <span class="callsign">EA</span>
+                <span class="title">Examen Radioaficionado</span>
+            </div>
+            <nav class="main-nav">
+                <a href="../index.html">Inicio</a>
+                <a href="index.html" class="active">Parte I</a>
+                <a href="../parte2/index.html">Parte II</a>
+                <a href="../recursos.html">Recursos</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="content-page">
+        <nav class="breadcrumb">
+            <a href="../index.html">Inicio</a>
+            <span>›</span>
+            <a href="index.html">Parte I</a>
+            <span>›</span>
+            Tema 1
+        </nav>
+
+        <h1>Tema 1: Teoría de la electricidad, electromagnetismo y radio</h1>
+        <p class="tema-meta">Conceptos fundamentales de electricidad y radioelectricidad</p>
+
+        <!-- 1.1 Conductividad -->
+        <section class="content-section" id="conductividad">
+            <h2>1.1 Conductividad</h2>
+            
+            <h3>Conductores, semiconductores y aislantes</h3>
+            <p>Los materiales se clasifican según su capacidad para conducir la corriente eléctrica:</p>
+            
+            <div class="definition">
+                <dl>
+                    <dt>Conductores</dt>
+                    <dd>Materiales con electrones libres que permiten el paso fácil de la corriente. Ejemplos: cobre, aluminio, plata, oro.</dd>
+                </dl>
+                <dl>
+                    <dt>Semiconductores</dt>
+                    <dd>Materiales cuya conductividad está entre conductores y aislantes. Su resistividad varía con la temperatura y la luz. Ejemplos: silicio, germanio.</dd>
+                </dl>
+                <dl>
+                    <dt>Aislantes (dieléctricos)</dt>
+                    <dd>Materiales que impiden o dificultan el paso de la corriente. Ejemplos: vidrio, plástico, aire, cerámica.</dd>
+                </dl>
+            </div>
+
+            <h3>Magnitudes eléctricas fundamentales</h3>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Magnitud</th>
+                        <th>Símbolo</th>
+                        <th>Unidad</th>
+                        <th>Definición</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Intensidad</td>
+                        <td>I</td>
+                        <td>Amperio (A)</td>
+                        <td>Flujo de carga eléctrica por unidad de tiempo</td>
+                    </tr>
+                    <tr>
+                        <td>Voltaje (tensión)</td>
+                        <td>V o U</td>
+                        <td>Voltio (V)</td>
+                        <td>Diferencia de potencial entre dos puntos</td>
+                    </tr>
+                    <tr>
+                        <td>Resistencia</td>
+                        <td>R</td>
+                        <td>Ohmio (Ω)</td>
+                        <td>Oposición al paso de la corriente</td>
+                    </tr>
+                    <tr>
+                        <td>Potencia</td>
+                        <td>P</td>
+                        <td>Vatio (W)</td>
+                        <td>Energía por unidad de tiempo</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Ley de Ohm</h3>
+            <p>Relación fundamental entre voltaje, intensidad y resistencia:</p>
+            
+            <div class="formula">
+                <strong>V = I × R</strong><br>
+                <small>Donde: V = voltaje (V), I = intensidad (A), R = resistencia (Ω)</small>
+            </div>
+            
+            <p>Formas despejadas:</p>
+            <div class="formula">
+                I = V / R<br>
+                R = V / I
+            </div>
+
+            <h3>Leyes de Kirchhoff</h3>
+            
+            <div class="definition">
+                <dl>
+                    <dt>Primera Ley (Ley de nodos o corrientes)</dt>
+                    <dd>La suma de las corrientes que entran a un nodo es igual a la suma de las corrientes que salen. ΣI<sub>entrada</sub> = ΣI<sub>salida</sub></dd>
+                </dl>
+                <dl>
+                    <dt>Segunda Ley (Ley de mallas o tensiones)</dt>
+                    <dd>La suma algebraica de las tensiones en un circuito cerrado es igual a cero. ΣV = 0</dd>
+                </dl>
+            </div>
+
+            <h3>Potencia eléctrica</h3>
+            <div class="formula">
+                <strong>P = V × I</strong><br>
+                <small>Combinando con la Ley de Ohm:</small><br>
+                P = I² × R<br>
+                P = V² / R
+            </div>
+
+            <h3>Energía eléctrica</h3>
+            <div class="formula">
+                <strong>E = P × t</strong><br>
+                <small>Donde: E = energía (J o Wh), P = potencia (W), t = tiempo (s o h)</small>
+            </div>
+
+            <h3>Capacidad de una batería</h3>
+            <p>Se expresa en <strong>amperios-hora (Ah)</strong>. Indica la cantidad de carga que puede suministrar.</p>
+            <div class="formula">
+                Capacidad (Ah) = Intensidad (A) × Tiempo (h)<br>
+                <small>Una batería de 100 Ah puede suministrar 1A durante 100h, o 10A durante 10h (aproximadamente)</small>
+            </div>
+        </section>
+
+        <!-- 1.2 Fuentes de alimentación -->
+        <section class="content-section" id="fuentes">
+            <h2>1.2 Fuentes de alimentación - Conceptos básicos</h2>
+            
+            <div class="definition">
+                <dl>
+                    <dt>Fuerza electromotriz (fem)</dt>
+                    <dd>Energía por unidad de carga que suministra una fuente. Se mide en voltios.</dd>
+                </dl>
+                <dl>
+                    <dt>Diferencia de potencial</dt>
+                    <dd>Tensión entre dos puntos del circuito.</dd>
+                </dl>
+                <dl>
+                    <dt>Resistencia interna (r<sub>i</sub>)</dt>
+                    <dd>Resistencia propia de la fuente que causa pérdidas.</dd>
+                </dl>
+                <dl>
+                    <dt>Tensión en terminales</dt>
+                    <dd>V<sub>terminales</sub> = fem - I × r<sub>i</sub></dd>
+                </dl>
+                <dl>
+                    <dt>Corriente de cortocircuito</dt>
+                    <dd>I<sub>cc</sub> = fem / r<sub>i</sub> (máxima corriente cuando la carga es cero)</dd>
+                </dl>
+            </div>
+
+            <h3>Conexión de fuentes en serie</h3>
+            <p>Las tensiones se suman: V<sub>total</sub> = V₁ + V₂ + V₃ + ...</p>
+            <p>La resistencia interna total se suma: r<sub>total</sub> = r₁ + r₂ + r₃ + ...</p>
+
+            <h3>Conexión de fuentes en paralelo</h3>
+            <p>La tensión permanece igual (deben tener el mismo voltaje).</p>
+            <p>La capacidad se suma y la resistencia interna disminuye.</p>
+        </section>
+
+        <!-- 1.3 Campo eléctrico -->
+        <section class="content-section" id="campo-electrico">
+            <h2>1.3 Campo eléctrico</h2>
+            
+            <p>El campo eléctrico es la región del espacio donde una carga experimenta una fuerza.</p>
+            
+            <div class="definition">
+                <dl>
+                    <dt>Intensidad del campo eléctrico (E)</dt>
+                    <dd>Fuerza por unidad de carga. Se mide en <strong>voltios por metro (V/m)</strong>.</dd>
+                </dl>
+            </div>
+            
+            <div class="formula">
+                E = V / d<br>
+                <small>Donde: E = intensidad de campo (V/m), V = tensión (V), d = distancia (m)</small>
+            </div>
+
+            <h3>Aislamiento de campos eléctricos</h3>
+            <p>Los campos eléctricos pueden ser bloqueados mediante materiales conductores (jaula de Faraday). Una malla metálica o carcasa conductora conectada a tierra protege el interior de campos eléctricos externos.</p>
+        </section>
+
+        <!-- 1.4 Campo magnético -->
+        <section class="content-section" id="campo-magnetico">
+            <h2>1.4 Campo magnético</h2>
+            
+            <p>Todo conductor por el que circula corriente genera un campo magnético a su alrededor.</p>
+            
+            <h3>Campo magnético en conductores</h3>
+            <p>La dirección del campo magnético sigue la <strong>regla de la mano derecha</strong>: con el pulgar en la dirección de la corriente, los dedos indican la dirección del campo magnético.</p>
+
+            <h3>Aislamiento de campos magnéticos</h3>
+            <p>Los campos magnéticos son más difíciles de aislar que los eléctricos. Se utilizan materiales de alta permeabilidad magnética (mu-metal, hierro dulce) para desviar las líneas de campo.</p>
+        </section>
+
+        <!-- 1.5 Campo electromagnético -->
+        <section class="content-section" id="campo-em">
+            <h2>1.5 Campo electromagnético</h2>
+            
+            <h3>Ondas de radio como ondas electromagnéticas</h3>
+            <p>Las ondas de radio son ondas electromagnéticas compuestas por campos eléctricos y magnéticos perpendiculares entre sí y a la dirección de propagación.</p>
+
+            <h3>Velocidad de propagación</h3>
+            <div class="formula">
+                <strong>c = 299.792.458 m/s ≈ 3 × 10⁸ m/s</strong> (en el vacío)
+            </div>
+
+            <h3>Relación entre frecuencia y longitud de onda</h3>
+            <div class="formula">
+                <strong>c = f × λ</strong><br>
+                λ = c / f<br>
+                f = c / λ<br>
+                <small>Donde: c = velocidad de la luz, f = frecuencia (Hz), λ = longitud de onda (m)</small>
+            </div>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Banda</th>
+                        <th>Frecuencia</th>
+                        <th>Longitud de onda</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>160 m</td><td>1,8 - 2 MHz</td><td>≈ 160 m</td></tr>
+                    <tr><td>80 m</td><td>3,5 - 4 MHz</td><td>≈ 80 m</td></tr>
+                    <tr><td>40 m</td><td>7 - 7,3 MHz</td><td>≈ 40 m</td></tr>
+                    <tr><td>20 m</td><td>14 - 14,35 MHz</td><td>≈ 20 m</td></tr>
+                    <tr><td>2 m</td><td>144 - 146 MHz</td><td>≈ 2 m</td></tr>
+                    <tr><td>70 cm</td><td>430 - 440 MHz</td><td>≈ 70 cm</td></tr>
+                </tbody>
+            </table>
+
+            <h3>Polarización</h3>
+            <p>La polarización indica la orientación del campo eléctrico:</p>
+            <ul>
+                <li><strong>Polarización horizontal:</strong> campo eléctrico paralelo al suelo</li>
+                <li><strong>Polarización vertical:</strong> campo eléctrico perpendicular al suelo</li>
+                <li><strong>Polarización circular:</strong> el campo eléctrico rota (derecha o izquierda)</li>
+            </ul>
+        </section>
+
+        <!-- 1.6 Señales sinusoidales -->
+        <section class="content-section" id="sinusoidales">
+            <h2>1.6 Señales sinusoidales</h2>
+            
+            <h3>Valores característicos</h3>
+            <div class="definition">
+                <dl>
+                    <dt>Valor instantáneo</dt>
+                    <dd>Valor de la señal en un instante determinado: v(t) = V<sub>max</sub> × sen(ωt)</dd>
+                </dl>
+                <dl>
+                    <dt>Valor máximo (V<sub>max</sub> o V<sub>p</sub>)</dt>
+                    <dd>Amplitud máxima de la señal (valor pico).</dd>
+                </dl>
+                <dl>
+                    <dt>Valor pico a pico (V<sub>pp</sub>)</dt>
+                    <dd>Diferencia entre el valor máximo y mínimo: V<sub>pp</sub> = 2 × V<sub>max</sub></dd>
+                </dl>
+                <dl>
+                    <dt>Valor eficaz (V<sub>rms</sub> o V<sub>ef</sub>)</dt>
+                    <dd>Valor equivalente de corriente continua que produce el mismo efecto de calentamiento.<br>
+                    <strong>V<sub>rms</sub> = V<sub>max</sub> / √2 ≈ 0,707 × V<sub>max</sub></strong></dd>
+                </dl>
+                <dl>
+                    <dt>Valor medio</dt>
+                    <dd>Para una onda completa es cero. Para media onda: V<sub>medio</sub> = 2 × V<sub>max</sub> / π ≈ 0,637 × V<sub>max</sub></dd>
+                </dl>
+            </div>
+
+            <h3>Período y frecuencia</h3>
+            <div class="formula">
+                f = 1 / T<br>
+                T = 1 / f<br>
+                <small>Donde: f = frecuencia en Hertzios (Hz), T = período en segundos (s)</small>
+            </div>
+            
+            <p>El <strong>Hercio (Hz)</strong> es la unidad de frecuencia: 1 Hz = 1 ciclo por segundo.</p>
+            
+            <table>
+                <thead>
+                    <tr><th>Prefijo</th><th>Símbolo</th><th>Valor</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>kilo</td><td>kHz</td><td>10³ Hz</td></tr>
+                    <tr><td>mega</td><td>MHz</td><td>10⁶ Hz</td></tr>
+                    <tr><td>giga</td><td>GHz</td><td>10⁹ Hz</td></tr>
+                </tbody>
+            </table>
+
+            <h3>Diferencia de fase</h3>
+            <p>Desfase angular entre dos señales de la misma frecuencia, medido en grados (°) o radianes (rad).</p>
+            <ul>
+                <li>Señales <strong>en fase:</strong> desfase = 0°</li>
+                <li>Señales en <strong>cuadratura:</strong> desfase = 90°</li>
+                <li>Señales en <strong>oposición de fase:</strong> desfase = 180°</li>
+            </ul>
+        </section>
+
+        <!-- 1.7 Señales no sinusoidales -->
+        <section class="content-section" id="no-sinusoidales">
+            <h2>1.7 Señales no sinusoidales</h2>
+            
+            <h3>Señal de audio</h3>
+            <p>Señales complejas en el rango de 20 Hz a 20 kHz (espectro audible humano).</p>
+
+            <h3>Ondas cuadradas</h3>
+            <p>Señales que alternan entre dos niveles con transiciones rápidas. Contienen la frecuencia fundamental más una serie infinita de armónicos impares.</p>
+
+            <h3>Componentes de una señal compleja</h3>
+            <ul>
+                <li><strong>Componente continua (DC):</strong> valor medio de la señal</li>
+                <li><strong>Fundamental:</strong> frecuencia principal de la señal</li>
+                <li><strong>Armónicos:</strong> múltiplos enteros de la frecuencia fundamental (2f, 3f, 4f...)</li>
+            </ul>
+
+            <h3>Ruido</h3>
+            <div class="definition">
+                <dl>
+                    <dt>Ruido térmico (Johnson-Nyquist)</dt>
+                    <dd>Generado por el movimiento aleatorio de electrones en conductores. Presente en todas las resistencias.</dd>
+                </dl>
+                <dl>
+                    <dt>Ruido de banda</dt>
+                    <dd>Potencia de ruido dentro de un ancho de banda específico.</dd>
+                </dl>
+                <dl>
+                    <dt>Densidad de potencia de ruido</dt>
+                    <dd>Potencia de ruido por unidad de ancho de banda (W/Hz).</dd>
+                </dl>
+            </div>
+            
+            <div class="formula">
+                Potencia de ruido térmico: P<sub>n</sub> = k × T × B<br>
+                <small>k = constante de Boltzmann (1,38 × 10⁻²³ J/K), T = temperatura (K), B = ancho de banda (Hz)</small>
+            </div>
+        </section>
+
+        <!-- 1.8 Señales moduladas -->
+        <section class="content-section" id="modulacion">
+            <h2>1.8 Señales moduladas</h2>
+            
+            <p>La modulación es el proceso de variar una característica de una señal portadora según una señal de información.</p>
+
+            <h3>Modulación por onda continua (CW)</h3>
+            <p>La portadora se enciende y apaga según un código (típicamente Morse). Designación: <strong>A1A</strong>.</p>
+
+            <h3>Modulación en Amplitud (AM)</h3>
+            <p>La amplitud de la portadora varía según la señal moduladora.</p>
+            
+            <div class="definition">
+                <dl>
+                    <dt>Porcentaje de modulación (m)</dt>
+                    <dd>m = (V<sub>max</sub> - V<sub>min</sub>) / (V<sub>max</sub> + V<sub>min</sub>) × 100%<br>
+                    Debe mantenerse ≤ 100% para evitar sobremodulación.</dd>
+                </dl>
+                <dl>
+                    <dt>Bandas laterales</dt>
+                    <dd>Frecuencias superior (f<sub>c</sub> + f<sub>m</sub>) e inferior (f<sub>c</sub> - f<sub>m</sub>) generadas alrededor de la portadora.</dd>
+                </dl>
+                <dl>
+                    <dt>Ancho de banda AM</dt>
+                    <dd>BW = 2 × f<sub>moduladora máx</sub></dd>
+                </dl>
+            </div>
+
+            <h3>Tipos de AM</h3>
+            <ul>
+                <li><strong>A3E (AM doble banda lateral):</strong> portadora + ambas bandas laterales</li>
+                <li><strong>J3E (SSB - banda lateral única):</strong> una sola banda lateral, portadora suprimida</li>
+                <li><strong>H3E:</strong> portadora completa + una banda lateral</li>
+                <li><strong>R3E:</strong> portadora reducida + una banda lateral</li>
+            </ul>
+            
+            <p>La <strong>sobremodulación</strong> (m > 100%) causa distorsión y emisiones fuera de banda. Se evita controlando el nivel de audio de entrada.</p>
+
+            <h3>Modulación en Frecuencia (FM) y Fase (PM)</h3>
+            
+            <div class="definition">
+                <dl>
+                    <dt>Desviación de frecuencia (Δf)</dt>
+                    <dd>Variación máxima de la frecuencia respecto a la portadora.</dd>
+                </dl>
+                <dl>
+                    <dt>Índice de modulación (β)</dt>
+                    <dd>β = Δf / f<sub>m</sub> (desviación / frecuencia moduladora)</dd>
+                </dl>
+                <dl>
+                    <dt>Ancho de banda FM (regla de Carson)</dt>
+                    <dd>BW ≈ 2 × (Δf + f<sub>m</sub>)</dd>
+                </dl>
+            </div>
+
+            <p>Designación: <strong>F3E</strong> para FM de voz.</p>
+
+            <h3>Modulación digital</h3>
+            <table>
+                <thead>
+                    <tr><th>Tipo</th><th>Descripción</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>FSK</td><td>Frequency Shift Keying - dos frecuencias representan 0 y 1</td></tr>
+                    <tr><td>2PSK (BPSK)</td><td>2 fases (0° y 180°) - 1 bit por símbolo</td></tr>
+                    <tr><td>4PSK (QPSK)</td><td>4 fases (0°, 90°, 180°, 270°) - 2 bits por símbolo</td></tr>
+                    <tr><td>QAM</td><td>Combina modulación de amplitud y fase - múltiples bits por símbolo</td></tr>
+                </tbody>
+            </table>
+            
+            <div class="definition">
+                <dl>
+                    <dt>Velocidad binaria (bit rate)</dt>
+                    <dd>Número de bits transmitidos por segundo (bps).</dd>
+                </dl>
+                <dl>
+                    <dt>Velocidad de símbolo (baud rate)</dt>
+                    <dd>Número de cambios de estado por segundo (baudios).</dd>
+                </dl>
+            </div>
+            
+            <p>Relación: Velocidad binaria = Velocidad de símbolo × bits por símbolo</p>
+
+            <h3>Detección y corrección de errores</h3>
+            <ul>
+                <li><strong>CRC (Cyclic Redundancy Check):</strong> detecta errores mediante código de redundancia</li>
+                <li><strong>FEC (Forward Error Correction):</strong> permite corregir errores sin retransmisión</li>
+            </ul>
+        </section>
+
+        <!-- 1.9 Potencia y energía -->
+        <section class="content-section" id="potencia">
+            <h2>1.9 Potencia y energía</h2>
+            
+            <h3>Potencia de señales sinusoidales</h3>
+            <div class="formula">
+                P = V<sub>rms</sub> × I<sub>rms</sub> = V<sub>rms</sub>² / R = I<sub>rms</sub>² × R
+            </div>
+
+            <h3>El decibelio (dB)</h3>
+            <p>Unidad logarítmica para expresar relaciones de potencia:</p>
+            
+            <div class="formula">
+                dB = 10 × log₁₀(P₂ / P₁)
+            </div>
+            
+            <table>
+                <thead>
+                    <tr><th>Relación de potencia</th><th>dB</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>×2</td><td>+3 dB</td></tr>
+                    <tr><td>×10</td><td>+10 dB</td></tr>
+                    <tr><td>×100</td><td>+20 dB</td></tr>
+                    <tr><td>×1000</td><td>+30 dB</td></tr>
+                    <tr><td>÷2</td><td>-3 dB</td></tr>
+                    <tr><td>÷10</td><td>-10 dB</td></tr>
+                </tbody>
+            </table>
+
+            <h3>Amplificadores y atenuadores en serie</h3>
+            <p>Los decibelios se suman algebraicamente:</p>
+            <div class="formula">
+                Ganancia total (dB) = G₁ + G₂ + G₃ + ...<br>
+                <small>Ejemplo: Amplificador +20 dB + Atenuador -6 dB = +14 dB total</small>
+            </div>
+
+            <h3>Adaptación de impedancias</h3>
+            <p>La <strong>máxima transferencia de potencia</strong> se produce cuando la impedancia de la fuente es igual a la impedancia de la carga (Z<sub>fuente</sub> = Z<sub>carga</sub>).</p>
+
+            <h3>Rendimiento</h3>
+            <div class="formula">
+                η = (P<sub>salida</sub> / P<sub>entrada</sub>) × 100%
+            </div>
+
+            <h3>Potencia en la cresta de la envolvente (PEP)</h3>
+            <p>Potencia media durante un ciclo de RF en el pico máximo de la envolvente de modulación. Importante en SSB donde la potencia varía con el audio.</p>
+        </section>
+
+        <!-- 1.10 DSP -->
+        <section class="content-section" id="dsp">
+            <h2>1.10 Procesado digital de señales (DSP)</h2>
+            
+            <h3>Muestreo y cuantificación</h3>
+            <p>El procesado digital requiere convertir señales analógicas a digitales:</p>
+            
+            <div class="definition">
+                <dl>
+                    <dt>Muestreo</dt>
+                    <dd>Tomar valores discretos de la señal a intervalos regulares.</dd>
+                </dl>
+                <dl>
+                    <dt>Cuantificación</dt>
+                    <dd>Asignar valores numéricos discretos a cada muestra.</dd>
+                </dl>
+            </div>
+
+            <h3>Frecuencia de Nyquist</h3>
+            <div class="formula">
+                <strong>f<sub>muestreo</sub> ≥ 2 × f<sub>máxima de la señal</sub></strong>
+            </div>
+            <p>Si no se cumple, se produce <strong>aliasing</strong> (solapamiento de frecuencias).</p>
+
+            <h3>Filtros</h3>
+            <ul>
+                <li><strong>Filtro antisolapamiento:</strong> filtro paso bajo antes del muestreo para eliminar frecuencias superiores a f<sub>Nyquist</sub></li>
+                <li><strong>Filtro de reconstrucción:</strong> filtro paso bajo después de la conversión D/A para suavizar la señal</li>
+            </ul>
+
+            <h3>Conversores</h3>
+            <div class="definition">
+                <dl>
+                    <dt>A/D (Analógico a Digital)</dt>
+                    <dd>Convierte señal analógica en valores digitales.</dd>
+                </dl>
+                <dl>
+                    <dt>D/A (Digital a Analógico)</dt>
+                    <dd>Convierte valores digitales en señal analógica.</dd>
+                </dl>
+            </div>
+        </section>
+
+        <nav class="tema-nav">
+            <a href="index.html">
+                <span class="nav-label">Índice</span>
+                <span class="nav-title">Parte I</span>
+            </a>
+            <a href="tema2.html" class="next">
+                <span class="nav-label">Siguiente</span>
+                <span class="nav-title">Tema 2: Componentes</span>
+            </a>
+        </nav>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>Proyecto de código abierto · <a href="https://github.com/t00mas/eaharec" target="_blank">GitHub</a></p>
+            <p class="disclaimer">Contenido basado en el Anexo II de la Orden IET/1311/2013</p>
+        </div>
+    </footer>
+</body>
+</html>
+

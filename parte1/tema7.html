@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema 7: Propagación | Examen Radioaficionado</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Newsreader:opsz,wght@6..72,400;6..72,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-content">
+            <div class="logo">
+                <span class="callsign">EA</span>
+                <span class="title">Examen Radioaficionado</span>
+            </div>
+            <nav class="main-nav">
+                <a href="../index.html">Inicio</a>
+                <a href="index.html" class="active">Parte I</a>
+                <a href="../parte2/index.html">Parte II</a>
+                <a href="../recursos.html">Recursos</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="content-page">
+        <nav class="breadcrumb">
+            <a href="../index.html">Inicio</a>
+            <span>›</span>
+            <a href="index.html">Parte I</a>
+            <span>›</span>
+            Tema 7
+        </nav>
+
+        <h1>Tema 7: Propagación</h1>
+        <p class="tema-meta">Propagación de ondas electromagnéticas y factores que la afectan</p>
+
+        <section class="content-section" id="atenuacion">
+            <h2>Atenuación de la señal</h2>
+
+            <h3>Propagación en espacio libre</h3>
+            <p>La atenuación aumenta con la distancia y la frecuencia:</p>
+            <div class="formula">
+                Atenuación (dB) = 32.4 + 20 log f(MHz) + 20 log d(km)
+            </div>
+            <p>Al duplicar la distancia, la señal se reduce 6 dB (1/4 de potencia).</p>
+
+            <h3>Relación señal/ruido (S/N)</h3>
+            <p>Determina la calidad de recepción. Depende de:</p>
+            <ul>
+                <li>Potencia de la señal recibida</li>
+                <li>Ruido externo (atmosférico, artificial, galáctico)</li>
+                <li>Ruido interno del receptor</li>
+            </ul>
+        </section>
+
+        <section class="content-section" id="ionosfera">
+            <h2>La ionosfera</h2>
+
+            <p>Región de la atmósfera (60-600 km) donde los gases están ionizados por radiación solar. Permite la propagación a larga distancia en HF.</p>
+
+            <h3>Capas de la ionosfera</h3>
+            <table>
+                <thead>
+                    <tr><th>Capa</th><th>Altura</th><th>Características</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>D</td>
+                        <td>60-90 km</td>
+                        <td>Solo de día. Absorbe frecuencias bajas. Desaparece de noche.</td>
+                    </tr>
+                    <tr>
+                        <td>E</td>
+                        <td>90-140 km</td>
+                        <td>Presente de día, débil de noche. Refracta frecuencias medias.</td>
+                    </tr>
+                    <tr>
+                        <td>Es (E esporádica)</td>
+                        <td>~100 km</td>
+                        <td>Irregular, puede refractar VHF. Más común en verano.</td>
+                    </tr>
+                    <tr>
+                        <td>F1</td>
+                        <td>140-200 km</td>
+                        <td>Solo de día, se fusiona con F2 de noche.</td>
+                    </tr>
+                    <tr>
+                        <td>F2</td>
+                        <td>200-600 km</td>
+                        <td>Principal capa para HF. Presente día y noche.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Influencia del Sol</h3>
+            <ul>
+                <li><strong>Ciclo solar (11 años):</strong> Mayor actividad = mejor propagación en frecuencias altas</li>
+                <li><strong>Variación diaria:</strong> Ionización máxima al mediodía local</li>
+                <li><strong>Variación estacional:</strong> Diferencias entre verano e invierno</li>
+                <li><strong>Tormentas solares:</strong> Pueden causar perturbaciones o apagones de propagación</li>
+            </ul>
+        </section>
+
+        <section class="content-section" id="frecuencias">
+            <h2>Frecuencias críticas</h2>
+
+            <h3>Frecuencia crítica (foF2)</h3>
+            <p>Máxima frecuencia que puede ser reflejada por una capa en incidencia vertical.</p>
+
+            <h3>MUF (Maximum Usable Frequency)</h3>
+            <p>Máxima frecuencia utilizable para una distancia determinada.</p>
+            <div class="formula">
+                MUF = foF2 × sec(θ)<br>
+                <small>θ = ángulo de incidencia</small>
+            </div>
+            <p>Típicamente MUF ≈ 3 × foF2 para distancias largas.</p>
+
+            <h3>FOT (Frequency of Optimum Traffic)</h3>
+            <p>Frecuencia óptima de trabajo. Aproximadamente 85% de la MUF. Proporciona margen de seguridad.</p>
+
+            <h3>LUF (Lowest Usable Frequency)</h3>
+            <p>Frecuencia mínima utilizable. Por debajo hay demasiada absorción (especialmente en capa D de día).</p>
+        </section>
+
+        <section class="content-section" id="modos">
+            <h2>Modos de propagación</h2>
+
+            <h3>Onda de tierra (ground wave)</h3>
+            <ul>
+                <li>Se propaga siguiendo la superficie terrestre</li>
+                <li>Predominante en MF y frecuencias bajas de HF</li>
+                <li>Alcance limitado (100-500 km típico)</li>
+                <li>Más eficaz sobre mar que sobre tierra</li>
+                <li>Usada en 160m y 80m de día</li>
+            </ul>
+
+            <h3>Onda de espacio (sky wave)</h3>
+            <ul>
+                <li>Refractada por la ionosfera</li>
+                <li>Permite comunicaciones a larga distancia (DX)</li>
+                <li>Predominante en HF</li>
+                <li>Varía con hora, estación y ciclo solar</li>
+            </ul>
+
+            <h3>Ángulo de radiación</h3>
+            <p>Ángulo de la onda respecto al horizonte:</p>
+            <ul>
+                <li><strong>Ángulo bajo (5-15°):</strong> DX, saltos largos</li>
+                <li><strong>Ángulo alto (>30°):</strong> Comunicaciones regionales, NVIS</li>
+            </ul>
+
+            <h3>Distancia de salto (skip distance)</h3>
+            <p>Distancia mínima para comunicación ionosférica. Existe una zona de silencio entre la cobertura de onda de tierra y el primer salto ionosférico.</p>
+
+            <h3>Saltos múltiples</h3>
+            <p>La señal puede reflejarse varias veces entre ionosfera y tierra, permitiendo alcances de miles de kilómetros.</p>
+
+            <h3>Desvanecimiento (fading)</h3>
+            <p>Variación de la intensidad de señal debido a:</p>
+            <ul>
+                <li>Interferencia entre ondas por múltiples trayectos</li>
+                <li>Cambios en la ionosfera</li>
+                <li>Rotación de la polarización</li>
+            </ul>
+        </section>
+
+        <section class="content-section" id="troposfera">
+            <h2>Propagación troposférica</h2>
+
+            <p>La troposfera (0-10 km) afecta principalmente a VHF y superiores.</p>
+
+            <h3>Línea de visión directa</h3>
+            <div class="formula">
+                Horizonte radioeléctrico (km) ≈ 4.12 × √h (metros)<br>
+                <small>Algo mayor que el horizonte óptico por refracción</small>
+            </div>
+
+            <h3>Influencia de la altura de antena</h3>
+            <p>Mayor altura = mayor alcance. Fundamental en VHF/UHF.</p>
+
+            <h3>Inversión de temperatura</h3>
+            <p>Cuando una capa de aire caliente queda sobre aire frío, se forma un conducto que puede extender enormemente el alcance en VHF/UHF.</p>
+
+            <h3>Propagación por conducto (ducting)</h3>
+            <ul>
+                <li>Las ondas quedan atrapadas en capas atmosféricas</li>
+                <li>Alcances de cientos o miles de km en VHF</li>
+                <li>Más frecuente en verano y sobre el mar</li>
+            </ul>
+        </section>
+
+        <section class="content-section" id="especiales">
+            <h2>Modos especiales de propagación</h2>
+
+            <h3>Capa E esporádica</h3>
+            <ul>
+                <li>Nubes de ionización intensa a ~100 km</li>
+                <li>Puede reflejar señales de VHF (hasta 144 MHz, a veces más)</li>
+                <li>Impredecible, más común en verano</li>
+                <li>Duración variable (minutos a horas)</li>
+            </ul>
+
+            <h3>Reflexión por auroras</h3>
+            <ul>
+                <li>Señales reflejadas por la ionización de las auroras boreales/australes</li>
+                <li>Produce señales distorsionadas (flutter)</li>
+                <li>Útil en VHF, especialmente en latitudes altas</li>
+            </ul>
+
+            <h3>Dispersión por meteoritos (meteor scatter)</h3>
+            <ul>
+                <li>Los meteoritos crean estelas ionizadas al entrar en la atmósfera</li>
+                <li>Reflexiones breves (segundos) en VHF</li>
+                <li>Útil para comunicaciones de ~1000-2000 km</li>
+                <li>Mejor durante lluvias de meteoritos</li>
+            </ul>
+
+            <h3>Reflexión lunar (EME - Earth-Moon-Earth)</h3>
+            <ul>
+                <li>La señal viaja a la Luna y vuelve</li>
+                <li>Retardo ~2.5 segundos</li>
+                <li>Requiere equipos potentes y antenas de alta ganancia</li>
+                <li>Pérdidas de ~250 dB</li>
+            </ul>
+        </section>
+
+        <section class="content-section" id="ruido">
+            <h2>Ruido</h2>
+
+            <h3>Ruido atmosférico</h3>
+            <p>Generado por tormentas eléctricas. Predominante en frecuencias bajas. Mayor en zonas tropicales.</p>
+
+            <h3>Ruido galáctico</h3>
+            <p>Radiación de fondo del universo. Notable en VHF cuando se apunta al centro de la galaxia.</p>
+
+            <h3>Ruido artificial</h3>
+            <p>Fuentes: motores, líneas eléctricas, electrónica, fuentes conmutadas, LED. Principal limitante en zonas urbanas.</p>
+
+            <h3>Ruido térmico</h3>
+            <p>Generado por la agitación térmica de los electrones. Presente en todos los conductores.</p>
+        </section>
+
+        <section class="content-section" id="prediccion">
+            <h2>Predicción de propagación</h2>
+
+            <h3>Índices solares</h3>
+            <ul>
+                <li><strong>SFI (Solar Flux Index):</strong> Flujo solar a 2800 MHz. Mayor = mejor propagación HF alta.</li>
+                <li><strong>SSN (Sunspot Number):</strong> Número de manchas solares.</li>
+                <li><strong>K-index:</strong> Perturbación geomagnética (0-9). Bajo = condiciones estables.</li>
+                <li><strong>A-index:</strong> Media diaria de perturbación.</li>
+            </ul>
+
+            <h3>Cálculo básico</h3>
+            <p>Para estimar la banda adecuada:</p>
+            <ul>
+                <li>Calcular la hora solar en el punto medio del trayecto</li>
+                <li>Considerar el índice SFI y la estación del año</li>
+                <li>Usar programas de predicción (VOACAP, etc.)</li>
+                <li>Experiencia y observación de las condiciones</li>
+            </ul>
+        </section>
+
+        <nav class="tema-nav">
+            <a href="tema6.html">
+                <span class="nav-label">Anterior</span>
+                <span class="nav-title">Tema 6: Antenas</span>
+            </a>
+            <a href="tema8.html" class="next">
+                <span class="nav-label">Siguiente</span>
+                <span class="nav-title">Tema 8: Medidas</span>
+            </a>
+        </nav>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>Proyecto de código abierto · <a href="https://github.com/t00mas/eaharec" target="_blank">GitHub</a></p>
+            <p class="disclaimer">Contenido basado en el Anexo II de la Orden IET/1311/2013</p>
+        </div>
+    </footer>
+</body>
+</html>
+
