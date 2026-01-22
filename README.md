@@ -57,7 +57,7 @@ python3 -m http.server 8000
 ## Estructura del proyecto
 
 ```
-radio/
+/
 ├── index.html              # Página principal
 ├── recursos.html           # Enlaces y recursos
 ├── css/
